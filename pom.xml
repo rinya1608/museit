@@ -63,13 +63,6 @@
 							</execution>
 						</executions>
 					</plugin>
-				</plugins>
-			</build>
-		</profile>
-		<profile>
-			<id>copy-build</id>
-			<build>
-				<plugins>
 					<plugin>
 						<artifactId>maven-antrun-plugin</artifactId>
 						<executions>
@@ -90,13 +83,6 @@
 					</plugin>
 				</plugins>
 			</build>
-			<activation>
-				<file>
-					<exists>
-						${basedir}/frontend/build
-					</exists>
-				</file>
-			</activation>
 		</profile>
 	</profiles>
 	<dependencies>
