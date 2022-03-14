@@ -1,0 +1,9 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  mvc:
+    static-path-pattern: /**
+  web:
+    resources:
+      static-locations: classpath:./static
