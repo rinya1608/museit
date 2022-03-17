@@ -1,0 +1,10 @@
+language: java
+script: mvn clean install -DskipTests -Pdeploy
+deploy:
+  provider: heroku
+  app: museit
+  api_key:
+    secure: tgBaWbuYJ6tr9A4Hz7nigG4/X0v75Zgc47HgsjY/NW8xsNmP2SymH0nm1KMt6eIdL8vubrf4ZF7mv7GSbzQcYGwijBCbboiDo9aa0H2aIbh8mlwEycxsGh8WVa4sWD5t/I9in9zl1ZKMMgCLucElQHFhKcyBLw80YnRpbqKFyymYOmd6KrH42DCwxCz8snWUUd8PRx9x6oHgXT6IvXwok4z7fnj/sWqp8pd3XS8N0qI9G+ULioYtk0tux/xH98QRH8B3AK5CcGi6+9ixgGnxgwh1I22902pvv9jR4fLm+X/Ykc3yAxB/8B0AWj8vrqKcHfdxA0IhXqQT8PzjT5EnJL3O4d9HjHGO3x+qzaYk3eAWVDtto5Fdw9UjQG78WpNxVO05nduJsxQ4v1YwoRKnYdjmpi4Ghqo51KA3OKwNb19X7c7U28WykaJcMziR8Z5w/Wg0dnuhkp0rynskjfa8CM73XP0OHXUz6CEeeN5vicsxbMfVS4cTcZ0OH6F+UHIAlwibqZ+3Gw7uVSns4CPWAPQChxv0mTBL8YbKuLypyTBOdudehhVRqwv8jWdeGAOK9x6i8mrV79/K7P4XK+Q7VAcGCItOUP6k0+yUzUVxUXHQXv9nP6E7zJ61qaLJqN44GZlwtCVhxwyOpmnTeMdE4Fm0DPrzg6MdlXSQ7T6/thk=
+branches:
+  only:
+  - master
