@@ -1,0 +1,68 @@
+button {
+    width: 140px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 10px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+}
+button {
+    background: #151d2f;
+    border: none;
+    z-index: 1;
+}
+button:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #468df3;
+    border-radius: 5px;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+    transition: all 0.3s ease;
+}
+button:hover {
+    color: #fff;
+}
+button:hover:after {
+    left: 0;
+    width: 100%;
+}
+button:active {
+    top: 2px;
+}
+.fileUploadForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30vw;
+    height: 50vh;
+    color: white;
+}
+.fileUploadForm-form{
+    margin-top: 20px;
+}
+.fileUploadForm-form_input-file {
+    display: none;
+}
+.fileUploadForm-form_button-file {
+}
+.fileUploadForm-form_button-download {
+    margin-left: 10px;
+}

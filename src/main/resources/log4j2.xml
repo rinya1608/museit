@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration status="debug" name="museITLog" packages="">
+    <Appenders>
+        <Console name="stdout" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %p %m%n"/>
+        </Console>
+    </Appenders>
+    <Appenders>
+        <File name="fout" fileName="museITLog.log" append="true">
+        </File>
+    </Appenders>
+    <Root level="debug">
+        <AppenderRef ref="stdout"/>
+    </Root>
+    <Root level="error">
+        <AppenderRef ref="fout"/>
+    </Root>
+</Configuration>
