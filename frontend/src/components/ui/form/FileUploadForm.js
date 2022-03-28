@@ -46,7 +46,7 @@ const FileUploadForm = React.forwardRef((props, ref) => {
                             isFile ? <button onClick={props.sendClick} className={"fileUploadForm-form_button-download"}>Загрузить</button> : ''
                         }
                 </div>
-                    : <button onClick={event => downloadFile(event,props.blob,fileName)}>Cкачать</button>
+                    : <div className={"fileUploadForm-form-wrap"}><button onClick={event => downloadFile(event,props.blob,fileName)}>Cкачать</button></div>
                 }
                 <div className={"fileUploadForm-form_feedback-wrap"}><a className={"fileUploadForm-form_feedback"} href={"https://t.me/+fsdwBE3o6_o0YmJi"}>Give feedback in Telegram</a></div>
             </form>
