@@ -10,4 +10,4 @@ spring:
 museit:
   api:
     music-generation:
-      url: http://127.0.0.1:5000/api/file
+      url: https://museitharm.herokuapp.com

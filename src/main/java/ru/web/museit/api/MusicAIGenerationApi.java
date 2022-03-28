@@ -29,12 +29,12 @@ public class MusicAIGenerationApi {
     private final ApiProperties apiProperties;
 
     public InputStream sendFile(byte[] fileBytes, String filename) {
+        String postUrl = apiProperties.getMusicGeneration().getUrl() + "/api/file";
         try (CloseableHttpClient client = HttpClients.createDefault()) {
             MultipartEntityBuilder builder = MultipartEntityBuilder.create();
-            HttpPost post = new HttpPost(apiProperties.getMusicGeneration().getUrl());
+            HttpPost post = new HttpPost(postUrl);
             builder.addBinaryBody("file", fileBytes, ContentType.APPLICATION_OCTET_STREAM, filename);
-            System.out.println(String.valueOf(fileBytes.length));
-            //post.setHeader(HttpHeaders.CONTENT_LENGTH, String.valueOf(fileBytes.length));
+            LOG.log(Level.INFO,"Send file to " + postUrl);
             post.setEntity(builder.build());
             CloseableHttpResponse response = client.execute(post);
             int statusCode = response.getStatusLine().getStatusCode();
