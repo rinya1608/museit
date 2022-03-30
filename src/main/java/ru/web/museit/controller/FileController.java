@@ -12,9 +12,6 @@ import org.springframework.web.multipart.MultipartFile;
 import ru.web.museit.response.MessageResponse;
 import ru.web.museit.service.FileService;
 
-import java.io.IOException;
-import java.util.Arrays;
-
 @RestController
 @RequiredArgsConstructor
 public class FileController {
@@ -22,11 +19,10 @@ public class FileController {
     private final FileService fileService;
 
     @PostMapping(path = "api/upload/file", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
-    public ResponseEntity<?> uploadFile(@RequestParam MultipartFile file) throws IOException {
-        System.out.printf("file  size in FileController %s%n",file.getSize());
+    public ResponseEntity<?> uploadFile(@RequestParam MultipartFile file) {
         ByteArrayResource byteArrayResource = fileService.processFile(file);
 
-        if (byteArrayResource != null){
+        if (byteArrayResource != null) {
             HttpHeaders header = new HttpHeaders();
             header.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + file.getOriginalFilename());
             header.add("Cache-Control", "no-cache, no-store, must-revalidate");
@@ -38,8 +34,7 @@ public class FileController {
                     .contentLength(byteArrayResource.contentLength())
                     .contentType(MediaType.valueOf(MediaType.APPLICATION_OCTET_STREAM_VALUE))
                     .body(byteArrayResource);
-        }
-        else return ResponseEntity.badRequest()
+        } else return ResponseEntity.badRequest()
                 .body(MessageResponse.withText("upload File Failed"));
 
 

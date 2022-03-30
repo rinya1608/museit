@@ -1,18 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Configuration status="debug" name="museITLog" packages="">
+<Configuration status="debug">
+    <Properties>
+        <Property name="LOG_PATTERN">
+            %d %highlight{%-5p} %style{%pid}{magenta} [%thread] %style{%C{1.}}{cyan}.%M(%F:%L) : %m%n
+        </Property>
+        <Property name="LOG_ROOT">
+            logs/
+        </Property>
+    </Properties>
     <Appenders>
         <Console name="stdout" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %p %m%n"/>
+            <PatternLayout disableAnsi="false" pattern="${LOG_PATTERN}"/>
         </Console>
+        <RollingFile name="file"
+                     fileName="${LOG_ROOT}museit.log"
+                     filePattern="${LOG_ROOT}museit-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="10">
+                <Delete basePath="${LOG_ROOT}" maxDepth="10">
+                    <IfLastModified age="30d" />
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
     </Appenders>
-    <Appenders>
-        <File name="fout" fileName="museITLog.log" append="true">
-        </File>
-    </Appenders>
-    <Root level="debug">
-        <AppenderRef ref="stdout"/>
-    </Root>
-    <Root level="error">
-        <AppenderRef ref="fout"/>
-    </Root>
+    <Loggers>
+        <Logger name="ru.web.museit" additivity="false" level="debug">
+            <AppenderRef ref="stdout"/>
+            <AppenderRef ref="file"/>
+        </Logger>
+        <Root level="warn">
+            <AppenderRef ref="stdout"/>
+            <AppenderRef ref="file"/>
+        </Root>
+    </Loggers>
+
 </Configuration>
