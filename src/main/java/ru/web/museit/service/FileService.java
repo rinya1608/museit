@@ -7,8 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import ru.web.museit.api.MusicAIGenerationApi;
 
-import java.io.InputStream;
-
 @Service
 @RequiredArgsConstructor
 @Log4j2
@@ -18,8 +16,7 @@ public class FileService {
 
     public ByteArrayResource processFile(MultipartFile file) {
         try {
-            InputStream inputStreamFile = musicAIGenerationApi.sendFile(file.getBytes(), file.getOriginalFilename());
-            byte[] fileBytes = inputStreamFile.readAllBytes();
+            byte[] fileBytes = musicAIGenerationApi.sendFile(file.getBytes(), file.getOriginalFilename());
             log.info("File processing success");
             return new ByteArrayResource(fileBytes);
         } catch (Exception e) {

@@ -12,8 +12,6 @@ import org.apache.logging.log4j.Level;
 import org.springframework.stereotype.Component;
 import ru.web.museit.property.ApiProperties;
 
-import java.io.InputStream;
-
 @Component
 @RequiredArgsConstructor
 @Log4j2
@@ -21,7 +19,7 @@ public class MusicAIGenerationApi {
 
     private final ApiProperties apiProperties;
 
-    public InputStream sendFile(byte[] fileBytes, String filename) {
+    public byte[] sendFile(byte[] fileBytes, String filename) {
         String postUrl = apiProperties.getMusicGeneration().getUrl() + "/api/file";
         try (CloseableHttpClient client = HttpClients.createDefault()) {
             MultipartEntityBuilder builder = MultipartEntityBuilder.create();
@@ -33,7 +31,9 @@ public class MusicAIGenerationApi {
             int statusCode = response.getStatusLine().getStatusCode();
             log.log(statusCode < 400 ? Level.INFO : Level.ERROR, "Service return {} status code", statusCode);
             if (statusCode < 400) {
-                return response.getEntity().getContent();
+                return response.getEntity()
+                        .getContent()
+                        .readAllBytes();
             } else return null;
         } catch (Exception e) {
             log.error("A exception while sending a post request to the music generate service", e);
