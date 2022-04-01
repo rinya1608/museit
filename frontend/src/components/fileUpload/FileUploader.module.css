@@ -46,7 +46,7 @@ button:hover:after {
 button:active {
     top: 2px;
 }
-.fileUploadForm{
+.fileUploadFormWrap{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,27 +55,27 @@ button:active {
     height: 50vh;
     color: white;
 }
-.fileUploadForm-form{
+.fileUploadForm{
     margin-top: 20px;
 }
-.fileUploadForm-form-wrap{
+.fileUploadForm_wrap{
     display: flex;
     justify-content: center;
 }
-.fileUploadForm-form_input-file {
+.fileUploadForm_wrap_inputFile {
     display: none;
 }
-.fileUploadForm-form_button-file {
+.fileUploadForm_wrap_buttonFile {
 }
-.fileUploadForm-form_button-download {
+.fileUploadForm_wrap_buttonDownload {
     margin-left: 10px;
 }
-.fileUploadForm-form_feedback-wrap{
+.feedback{
     margin-top: 40px;
     display: flex;
     justify-content: center;
 }
-.fileUploadForm-form_feedback{
+.feedback_link{
     padding: 15px 10px;
     display: inline-block;
     border: none;
@@ -86,7 +86,7 @@ button:active {
     transition: all 0.2s;
     box-shadow: 0 1px 0 0 rgba(159, 159, 159, 0.25), 0 -1px 0 0 rgba(139, 139, 139, 0.25), 1px 0 0 0 rgba(159, 159, 159, 0.25), -1px 0 0 0 rgba(139, 139, 139, 0.25), 1px -1px 0 0 rgba(149, 149, 149, 0.5), -1px 1px 0 0 rgba(149, 149, 149, 0.5), 1px 1px 0 0 rgba(169, 169, 169, 0.75), -1px -1px 0 0 rgba(128, 128, 128, 0.75);
 }
-.fileUploadForm-form_feedback:hover{
+.feedback_link:hover{
     box-shadow: 0 1px 0 0 rgba(165, 181, 222, 0.25), 0 -1px 0 0 rgba(34, 63, 171, 0.25), 1px 0 0 0 rgba(165, 181, 222, 0.25), -1px 0 0 0 rgba(34, 63, 171, 0.25), 1px -1px 0 0 rgba(195, 156, 208, 0.5), -1px 1px 0 0 rgba(34, 63, 171, 0.5), 1px 1px 0 0 rgba(135, 206, 235, 0.75), -1px -1px 0 0 rgba(34, 63, 171, 0.75);
     color: white;
     background: rgba(135, 206, 235, 0.05);

@@ -1,13 +1,13 @@
-import React, {useEffect, useState} from "react";
-import FileUpload from "./components/FileUpload";
+import React from "react";
+import FileUploader from "./components/fileUpload/FileUploader";
 
 function App() {
 
-  return (
-    <div className="App">
-        <FileUpload/>
-    </div>
-  );
+    return (
+        <div className="App">
+            <FileUploader/>
+        </div>
+    );
 }
 
 export default App;
