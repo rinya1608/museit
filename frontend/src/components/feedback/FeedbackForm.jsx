@@ -4,7 +4,7 @@ import localforage from "localforage";
 import LocalForageUtils from "../../utils/LocalForageUtils";
 import {FeedbackService} from "../../api/FeedbackService";
 
-const FeedbackForm = () => {
+const FeedbackForm = ({afterSendFunction}) => {
     const name = useRef();
     const contact = useRef();
     const message = useRef();
@@ -29,11 +29,13 @@ const FeedbackForm = () => {
             formData.append('processedFile', processedFile)
         }
         await FeedbackService.sendFeedback(formData)
+        e.target.reset()
+        afterSendFunction()
     }
 
     return (
         <div className={classes.feedback_wrap}>
-            <form className={classes.feedback_form}>
+            <form className={classes.feedback_form} onSubmit={sendFeedback}>
                 <div className={classes.feedback_row}><h2>Contact Us</h2></div>
                 <div className={classes.feedback_row}><input type={"text"} placeholder={"Name"} ref={name}
                                                              className={classes.feedback_row_field}/></div>
@@ -53,7 +55,7 @@ const FeedbackForm = () => {
                         :
                         null
                 }
-                <button className={classes.feedback_send} onClick={sendFeedback}>Send</button>
+                <button className={classes.feedback_send}>Send</button>
             </form>
         </div>
     );

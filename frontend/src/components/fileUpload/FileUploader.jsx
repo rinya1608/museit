@@ -64,6 +64,10 @@ const FileUpload = () => {
         getNewFile(formData);
     }
 
+    function closeModal(){
+        setModalActive(false)
+    }
+
 
     return (
         <div>
@@ -82,7 +86,7 @@ const FileUpload = () => {
                                           downloadFile={(e) => downloadFile(e, blob, fileName)} />
                         <div className={classes.feedback}>
                             <a className={classes.feedback_link} href={"#"} onClick={() => setModalActive(true)}>Обратная связь</a>
-                            <Modal active={modalActive} setActive={setModalActive}><FeedbackForm/></Modal>
+                            <Modal active={modalActive} setActive={setModalActive}><FeedbackForm afterSendFunction={closeModal}/></Modal>
                         </div>
                     </div>
             }
