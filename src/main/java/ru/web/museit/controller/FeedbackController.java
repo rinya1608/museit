@@ -23,10 +23,11 @@ public class FeedbackController {
             feedbackRequest.getName(),
             feedbackRequest.getContact(),
             feedbackRequest.getMessage(), 
+            feedbackRequest.getSourceFile(),
             feedbackRequest.getProcessedFile(),
             "Отзыв от пользователя"
         );
-        System.out.println(feedbackRequest.getProcessedFile());
+        System.out.println(feedbackRequest.getSourceFile());
         return ResponseEntity.ok().build();
     }
 }

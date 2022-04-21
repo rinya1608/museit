@@ -796,3 +796,97 @@ Caused by: java.lang.ClassNotFoundException: org.springframework.transaction.Rea
 2022-04-21 22:51:55,974 INFO  9276 [http-nio-8080-exec-1] r.w.m.a.MusicAIGenerationApi.sendFile(MusicAIGenerationApi.java:28) : Send file to https://museitharm.herokuapp.com/api/file
 2022-04-21 22:51:56,995 INFO  9276 [http-nio-8080-exec-1] r.w.m.a.MusicAIGenerationApi.sendFile(MusicAIGenerationApi.java:32) : Service return 200 status code
 2022-04-21 22:51:56,999 INFO  9276 [http-nio-8080-exec-1] r.w.m.s.FileService.processFile(FileService.java:20) : File processing success
+2022-04-21 22:57:58,761 INFO  3664 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 3664 (C:\myfolder\museit\target\classes started by Антон in C:\myfolder\museit)
+2022-04-21 22:57:58,773 DEBUG 3664 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-21 22:57:58,775 INFO  3664 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-04-21 22:58:00,521 INFO  3664 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.228 seconds (JVM running for 3.173)
+2022-04-21 22:58:34,300 INFO  9960 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 9960 (C:\myfolder\museit\target\classes started by Антон in C:\myfolder\museit)
+2022-04-21 22:58:34,314 DEBUG 9960 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-21 22:58:34,315 INFO  9960 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-04-21 22:58:36,145 INFO  9960 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.376 seconds (JVM running for 3.407)
+2022-04-21 22:58:42,101 INFO  9960 [http-nio-8080-exec-1] r.w.m.a.MusicAIGenerationApi.sendFile(MusicAIGenerationApi.java:28) : Send file to https://museitharm.herokuapp.com/api/file
+2022-04-21 22:58:43,051 INFO  9960 [http-nio-8080-exec-1] r.w.m.a.MusicAIGenerationApi.sendFile(MusicAIGenerationApi.java:32) : Service return 200 status code
+2022-04-21 22:58:43,054 INFO  9960 [http-nio-8080-exec-1] r.w.m.s.FileService.processFile(FileService.java:20) : File processing success
+2022-04-21 22:58:45,986 ERROR 9960 [http-nio-8080-exec-2] o.a.j.l.DirectJDKLog.log(DirectJDKLog.java:175) : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: InputStreamSource must not be null] with root cause
+java.lang.IllegalArgumentException: InputStreamSource must not be null
+	at org.springframework.util.Assert.notNull(Assert.java:201) ~[spring-core-5.3.16.jar:5.3.16]
+	at org.springframework.mail.javamail.MimeMessageHelper.addAttachment(MimeMessageHelper.java:1097) ~[spring-context-support-5.3.16.jar:5.3.16]
+	at org.springframework.mail.javamail.MimeMessageHelper.addAttachment(MimeMessageHelper.java:1074) ~[spring-context-support-5.3.16.jar:5.3.16]
+	at ru.web.museit.service.SendEmail.sendMailWithFile(SendEmail.java:38) ~[classes/:?]
+	at ru.web.museit.controller.FeedbackController.sendFeedback(FeedbackController.java:22) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:?]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.58.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.58.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at java.lang.Thread.run(Unknown Source) [?:?]
+2022-04-21 22:59:45,441 INFO  5132 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 5132 (C:\myfolder\museit\target\classes started by Антон in C:\myfolder\museit)
+2022-04-21 22:59:45,453 DEBUG 5132 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-21 22:59:45,454 INFO  5132 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-04-21 22:59:47,658 INFO  5132 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.711 seconds (JVM running for 3.659)
+2022-04-21 23:01:04,408 INFO  5040 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 5040 (C:\myfolder\museit\target\classes started by Антон in C:\myfolder\museit)
+2022-04-21 23:01:04,421 DEBUG 5040 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-21 23:01:04,422 INFO  5040 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-04-21 23:01:06,477 INFO  5040 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.56 seconds (JVM running for 3.514)
+2022-04-21 23:01:12,324 INFO  5040 [http-nio-8080-exec-1] r.w.m.a.MusicAIGenerationApi.sendFile(MusicAIGenerationApi.java:28) : Send file to https://museitharm.herokuapp.com/api/file
+2022-04-21 23:01:13,466 INFO  5040 [http-nio-8080-exec-1] r.w.m.a.MusicAIGenerationApi.sendFile(MusicAIGenerationApi.java:32) : Service return 200 status code
+2022-04-21 23:01:13,471 INFO  5040 [http-nio-8080-exec-1] r.w.m.s.FileService.processFile(FileService.java:20) : File processing success
+2022-04-21 23:02:04,237 INFO  6116 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 6116 (C:\myfolder\museit\target\classes started by Антон in C:\myfolder\museit)
+2022-04-21 23:02:04,251 DEBUG 6116 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-21 23:02:04,252 INFO  6116 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-04-21 23:02:06,077 INFO  6116 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.302 seconds (JVM running for 3.208)
+2022-04-21 23:02:28,523 INFO  6116 [http-nio-8080-exec-1] r.w.m.a.MusicAIGenerationApi.sendFile(MusicAIGenerationApi.java:28) : Send file to https://museitharm.herokuapp.com/api/file
+2022-04-21 23:02:29,683 INFO  6116 [http-nio-8080-exec-1] r.w.m.a.MusicAIGenerationApi.sendFile(MusicAIGenerationApi.java:32) : Service return 200 status code
+2022-04-21 23:02:29,688 INFO  6116 [http-nio-8080-exec-1] r.w.m.s.FileService.processFile(FileService.java:20) : File processing success
+2022-04-21 23:09:41,743 INFO  9416 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 9416 (C:\myfolder\museit\target\classes started by Антон in c:\myfolder\museit)
+2022-04-21 23:09:41,755 DEBUG 9416 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-21 23:09:41,756 INFO  9416 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-04-21 23:09:43,476 INFO  9416 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.186 seconds (JVM running for 3.197)
+2022-04-21 23:11:10,493 INFO  9704 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 9704 (C:\myfolder\museit\target\classes started by Антон in C:\myfolder\museit)
+2022-04-21 23:11:10,504 DEBUG 9704 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-21 23:11:10,505 INFO  9704 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-04-21 23:11:12,528 INFO  9704 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.501 seconds (JVM running for 3.488)

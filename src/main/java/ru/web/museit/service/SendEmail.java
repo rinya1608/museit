@@ -18,7 +18,8 @@ public class SendEmail {
     public void sendMailWithFile(String name,
                                  String contact,
                                  String body,
-                                 MultipartFile file,
+                                 MultipartFile source_file,
+                                 MultipartFile processed_file,
                                  String subject) throws MessagingException{
         
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
@@ -32,9 +33,11 @@ public class SendEmail {
         .toString();
 
         mimeMessageHelper.setFrom("museitcorp@gmail.com");
-        mimeMessageHelper.setTo("amaslov455@gmail.com");
+        mimeMessageHelper.setTo("rinya1608@gmail.com");
         mimeMessageHelper.setText(full_text, false);
         mimeMessageHelper.setSubject(subject);
+        mimeMessageHelper.addAttachment("source_file.mid", source_file);
+        mimeMessageHelper.addAttachment("processed_file.mid", processed_file);
 
         javaMailSender.send(mimeMessage);
 
