@@ -5,12 +5,16 @@ import FileUtils from "../../utils/FileUtils";
 import classes from "./FileUploader.module.css";
 import FileUploaderForm from "./FileUploaderForm";
 import FileUploaderConstants from "./FileUploaderConstants";
+import localforage from "localforage";
+import FeedbackForm from "../feedback/FeedbackForm";
+import Modal from "../common/Modal/Modal";
 
 const FileUpload = () => {
     const [blob, setBlob] = useState(null);
     const [isLoad, setLoad] = useState(false);
     const [isFile, setIsFile] = useState(false);
     const [fileName, setFileName] = useState("");
+    const [modalActive, setModalActive] = useState(false)
     const fileRef = useRef();
 
     function fileUploadHandler(e) {
@@ -39,6 +43,12 @@ const FileUpload = () => {
         try {
             setLoad(true)
             const response = await FileService.sendAndGetFile(formData);
+            console.log(formData.get('file'))
+            const oldFile = formData.get('file')
+            const newFile = new File([response],`result-${oldFile.name}`, {lastModified: new Date().getTime(), type: oldFile.type})
+            console.log(newFile)
+            await localforage.setItem('sourceFile', oldFile)
+            await localforage.setItem('processedFile', newFile)
             setBlob(response);
         } catch (e) {
             console.log(e);
@@ -52,6 +62,10 @@ const FileUpload = () => {
         let formData = new FormData();
         formData.append("file", fileRef.current.files[0]);
         getNewFile(formData);
+    }
+
+    function closeModal(){
+        setModalActive(false)
     }
 
 
@@ -71,7 +85,8 @@ const FileUpload = () => {
                                           sendFile={sendFile}
                                           downloadFile={(e) => downloadFile(e, blob, fileName)} />
                         <div className={classes.feedback}>
-                            <a className={classes.feedback_link} href={"https://t.me/+fsdwBE3o6_o0YmJi"}>Give feedback in Telegram</a>
+                            <a className={classes.feedback_link} href={"#"} onClick={() => setModalActive(true)}>Обратная связь</a>
+                            <Modal active={modalActive} setActive={setModalActive}><FeedbackForm afterSendFunction={closeModal}/></Modal>
                         </div>
                     </div>
             }
