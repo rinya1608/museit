@@ -37,11 +37,11 @@ const FeedbackForm = ({afterSendFunction}) => {
         <div className={classes.feedback_wrap}>
             <form className={classes.feedback_form} onSubmit={sendFeedback}>
                 <div className={classes.feedback_row}><h2>Contact Us</h2></div>
-                <div className={classes.feedback_row}><input type={"text"} placeholder={"Name"} ref={name}
+                <div className={classes.feedback_row}><input type={"text"} placeholder={"Имя"} ref={name}
                                                              className={classes.feedback_row_field}/></div>
-                <div className={classes.feedback_row}><input type={"text"} placeholder={"E-mail/Phone"} ref={contact}
+                <div className={classes.feedback_row}><input type={"text"} placeholder={"E-mail/Телефон"} ref={contact}
                                                              className={classes.feedback_row_field}/></div>
-                <div className={classes.feedback_row}><textarea placeholder="Message" ref={message}
+                <div className={classes.feedback_row}><textarea placeholder="Сообщение" ref={message}
                                                                 className={classes.feedback_row_field}/></div>
                 {
                     LocalForageUtils.elementsValid('sourceFile', 'processedFile') ?
@@ -55,7 +55,7 @@ const FeedbackForm = ({afterSendFunction}) => {
                         :
                         null
                 }
-                <button className={classes.feedback_send}>Send</button>
+                <button className={classes.feedback_send}>Отправить</button>
             </form>
         </div>
     );
