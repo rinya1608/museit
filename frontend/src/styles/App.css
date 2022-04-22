@@ -2,13 +2,32 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    list-style: none;
+    border: none;
 }
 
-#root {
-    background: #15141a;
-    width: 100vw;
-    height: 100vh;
+button{
+    background: #2B4CF9;
+    outline: none;
+    border: none;
+;
+}
+
+.app{
+    width: 100%;
+    text-align: center;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    background: #171616;
+}
+
+.main {
+    background: #15141a;
+    width: 1080px;
+    display: flex;
     justify-content: center;
 }

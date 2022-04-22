@@ -1,4 +1,4 @@
-button {
+.fileUploadForm button {
     width: 140px;
     height: 40px;
     color: #fff;
@@ -16,12 +16,12 @@ button {
     4px 4px 5px 0px rgba(0,0,0,.1);
     outline: none;
 }
-button {
+.fileUploadForm button {
     background: #151d2f;
     border: none;
     z-index: 1;
 }
-button:after {
+.fileUploadForm button:after {
     position: absolute;
     content: "";
     width: 0;
@@ -36,14 +36,14 @@ button:after {
     4px 4px 5px 0px rgba(0,0,0,.1);
     transition: all 0.3s ease;
 }
-button:hover {
+.fileUploadForm button:hover {
     color: #fff;
 }
-button:hover:after {
+.fileUploadForm button:hover:after {
     left: 0;
     width: 100%;
 }
-button:active {
+.fileUploadForm button:active {
     top: 2px;
 }
 .fileUploadFormWrap{
