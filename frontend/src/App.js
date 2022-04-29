@@ -12,7 +12,7 @@ function App() {
             <div className="main">
                 <BrowserRouter>
                     <Routes>
-                        <Route path="/about" element={<About/>}/>
+                        <Route path="/" element={<About/>}/>
                         <Route path="/file" element={<FileUploader/>}/>
                     </Routes>
                 </BrowserRouter>

@@ -6,16 +6,18 @@ const Header = () => {
         <div className={classes.header}>
             <div className={classes.header_wrap}>
                 <div className={classes.header_logo}>
-                    <img src={logo} alt='logo' className={classes.header_logo_img}/>
-                    <div className={classes.header_logo_title}>
-                        MuseIT
-                    </div>
+                    <a className={classes.header_logo_wrap} href="#">
+                        <img src={logo} alt='logo' className={classes.header_logo_wrap_img}/>
+                        <div className={classes.header_logo_wrap_title}>
+                            MuseIT
+                        </div>
+                    </a>
                 </div>
                 <ul className={classes.header_menu}>
-                    <li>О продукте</li>
-                    <li>Наша команда</li>
-                    <li>Отзывы</li>
-                    <li>Цены</li>
+                    <li><a href='#aboutProduct'>О продукте</a></li>
+                    <li><a href='#team'>Наша команда</a></li>
+                    <li><a href='#otziv'>Отзывы</a></li>
+                    <li><a href='#what'>Цены</a></li>
                 </ul>
                 <div className={classes.header_auth}>
                     <ul>

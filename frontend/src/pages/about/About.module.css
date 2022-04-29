@@ -4,8 +4,9 @@
 
 .about_top{
     width: 100%;
-    height: 700px;
-    background: green;
+    height: 600px;
+    background: url("../../img/preview.jpg") no-repeat;
+    background-size: 100%;
     margin-top: 100px;
     display: flex;
     justify-content: center;
@@ -38,24 +39,63 @@
 }
 
 .about_make_left_text{
-    margin-top: 20px;
+    margin-top: 50px;
     font-size: 18px;
     font-weight: 400;
+    width: 90%;
 }
 
 .about_make_left_button{
-    margin-top: 20px;
+    margin-top: 70px;
     width: 300px;
     height: 65px;
     border-radius: 8px;
     font-size: 16px;
     font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    background: #2B4CF9A6;
+}
+
+.about_make_left_button:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background: #2B4CF9A6;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.about_make_left_button:hover {
+    color: #fff;
+}
+.about_make_left_button:hover:after {
+    left: 0;
+    width: 100%;
+}
+.about_make_left_button:active {
+    top: 2px;
+}
+
+.about_make_left_button a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 .about_make_right{
     width: 50%;
-    height: 400px;
-    background: red;
+    height: 430px;
+    background: url("../../img/make.jpg") no-repeat;
+    background-size: 100%;
 }
 
 .about_why{
@@ -82,6 +122,7 @@
 }
 
 .about_why_list_el_icon{
+    user-select: none;
     width: 50px;
 }
 
@@ -101,82 +142,175 @@
     background: #184BFF;
     width: 32%;
     position: relative;
-    height: 200px;
+    height: 240px;
 }
 
 .about_why_images div:first-child{
-    background: #184BFF;
-    width: 32%;
-    position: relative;
-    height: 200px;
+    background: url("../../img/why1.jpg") no-repeat;
+    background-size: 100%;
 }
 
 .about_why_images div:nth-child(2){
-    background: #18ffae;
-    width: 32%;
-    position: relative;
-    height: 200px;
+    background: url("../../img/why2.jpg") no-repeat;
+    background-size: 100%;
 }
 
 .about_why_images div:last-child{
-    background: #6518ff;
-    width: 32%;
-    position: relative;
-    height: 200px;
+    background: url("../../img/why3.jpg") no-repeat;
+    background-size: 100%;
 }
 
 .about_what{
     margin-top:100px;
-    padding: 0 100px 0 100px;
-}
-
-.about_what_wrap{
     width: 100%;
-    height: 500px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.about_what_wrap_form{
+
+.about_what_form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px;
-    width:50%;
+    padding: 60px 70px 60px 70px;
+    width:45%;
     height: 100%;
     border: 5px solid #5D6AFB;
 }
 
-.about_what_wrap_form_title{
+.about_what_form_title{
     text-align: left;
     width: 100%;
+    margin-bottom: 40px;
 }
-.about_what_wrap_form_title h1{
-    font-size: 20px;
+.about_what_form_title h1{
+    font-size: 23px;
     font-weight: 700;
+    width: 100%;
 }
 
-.about_what_wrap_form input[type=text],.about_what_wrap_form input[type=password]{
+.about_what_form_input{
     width: 100%;
-    height: 90px;
+    height: 85px;
     background: #282A2C;
     border-radius: 8px;
-    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
 }
 
-.about_what_wrap_form button{
+.about_what_form_input input{
+    background: inherit;
+    outline: none;
+    border: none;
+    width: 80%;
+    margin-left: 10px;
+}
+
+.about_what_form_input input::placeholder{
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.about_what_form_input input:focus::placeholder{
+    color: transparent;
+}
+
+.about_what_form_input:nth-child(3) input::placeholder{
+    text-align: center;
+}
+
+.about_what_form button{
     width: 100%;
-    height: 90px;
+    height: 85px;
     background: #2B4CF9;
     border-radius: 8px;
-    margin-top: 10px;
     font-size: 20px;
     font-weight: 800;
 }
 
-.about_what_wrap_form_checkbox{
+.about_what_form_checkbox{
+    display: flex;
+    align-items: center;
     width: 100%;
+    margin-top: 20px;
     height: 10px;
+    font-size: 11px;
+    font-weight: 400;
+}
+.about_what_form_checkbox span{
+    margin-left: 10px;
 }
 
-.about_what_wrap_desc{
+.about_what_desc{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.about_what_desc_label{
+    padding-left: 10px;
+    font-size: 12px;
+    font-weight: 400;
+}
+.about_what_desc_title{
+    text-align: left;
+    margin-top: 40px;
+    font-size: 30px;
+    font-weight: 700;
+}
 
+.about_what_desc_text{
+    text-align: left;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 400;
+}
+.about_what_desc_tariffs{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.about_what_desc_tariffs li{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+    margin-top: 80px;
+
+}
+
+.about_what_desc_tariffs li img{
+    width: 20px;
+    user-select: none;
+
+}
+
+.about_what_desc_tariffs li span{
+    text-align: left;
+    margin-top: 10px;
+
+}
+
+.about_team{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.about_team h1{
+    font-size: 32px;
+}
+
+.about_team table{
+    border-spacing: 0 30px;
 }

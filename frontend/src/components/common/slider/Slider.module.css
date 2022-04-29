@@ -1,0 +1,126 @@
+.slider{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.slider_window{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.slider_window_elements{
+    display: flex;
+    align-items: center;
+    height: 500px;
+    transition: translate;
+    transition-property: transform;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+}
+
+.slider_panel{
+    display: flex;
+    margin-top: 50px;
+    width: 100px;
+    justify-content: space-between;
+    user-select: none;
+}
+
+.slider_panel_left{
+}
+
+.slider_panel_right{
+
+}
+
+.slider_panel_left,.slider_panel_right{
+    clip-path: circle(50%);
+    height: 40px;
+    width: 40px;
+    background: #2B4CF9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.slider_panel img{
+    height: 50%;
+}
+
+.slider_panel_right img{
+    transform: scaleX(-1);
+}
+
+
+.slider_element{
+    flex: 0 0 23%;
+    height: 250px;
+    border: 2px solid #E2EAF2;
+    padding: 40px;
+    transition: 0.2s;
+}
+
+.slider_element_active{
+    flex: 0 0 50%;
+    height: 500px;
+
+}
+
+.slider_element:not(:last-child){
+    margin-right: 2%;
+}
+
+.slider_element_wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+}
+
+.slider_element_wrap_quote{
+    width: 20px;
+    transition: 0.2s;
+    user-select: none;
+}
+
+.slider_element_wrap_quote_active{
+    width: 40px;
+}
+
+.slider_element_wrap_title{
+    font-size: 12px;
+    margin-top: 10px;
+    transition: 0.2s;
+}
+
+.slider_element_wrap_title_active{
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.slider_element_wrap_title, .slider_element_wrap_title_active{
+    font-weight: 500;
+    text-align: left;
+}
+
+.slider_element_wrap_text{
+    font-size: 5px;
+    margin-top: 10px;
+    transition: 0.2s;
+}
+
+.slider_element_wrap_text_active{
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.slider_element_wrap_text, .slider_element_wrap_text_active {
+    text-align: left;
+    font-weight: 400;
+}

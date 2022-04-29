@@ -1,26 +1,21 @@
 .fileUploadForm button {
-    width: 140px;
-    height: 40px;
+    width: 200px;
+    height: 50px;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 8px;
     padding: 10px 10px;
-    font-family: 'Lato', sans-serif;
+    font-size: 16px;
     font-weight: 500;
-    background: transparent;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
     display: inline-block;
-    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-    7px 7px 20px 0px rgba(0,0,0,.1),
-    4px 4px 5px 0px rgba(0,0,0,.1);
     outline: none;
-}
-.fileUploadForm button {
-    background: #151d2f;
+    background: #2B4CF9A6;
     border: none;
     z-index: 1;
 }
+
 .fileUploadForm button:after {
     position: absolute;
     content: "";
@@ -29,11 +24,8 @@
     top: 0;
     right: 0;
     z-index: -1;
-    background-color: #468df3;
-    border-radius: 5px;
-    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-    7px 7px 20px 0px rgba(0,0,0,.1),
-    4px 4px 5px 0px rgba(0,0,0,.1);
+    background: #2B4CF9A6;
+    border-radius: 8px;
     transition: all 0.3s ease;
 }
 .fileUploadForm button:hover {
@@ -46,48 +38,101 @@
 .fileUploadForm button:active {
     top: 2px;
 }
-.fileUploadFormWrap{
+
+.fileUploadForm{
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 100px;
+    width: 100%;
+    height: 400px;
+}
+
+.fileUploadForm_title{
+    font-size: 32px;
+    font-weight: 700;
+    margin-left: 40px;
+}
+
+.fileUploadForm_load, .fileUploadForm_wrap{
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.fileUploadForm_load{
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    width: 30vw;
-    height: 50vh;
-    color: white;
+    height: 100%;
 }
-.fileUploadForm{
-    margin-top: 20px;
-}
+
 .fileUploadForm_wrap{
-    display: flex;
-    justify-content: center;
+    justify-content: start;
 }
-.fileUploadForm_wrap_inputFile {
+
+.fileUploadForm_wrap_left{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 16px;
+    font-weight: 400;
+
+}
+
+.fileUploadForm_wrap_left_fileTitle, .fileUploadForm_wrap_left_toolTitle, .fileUploadForm_wrap_right_fileName{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.fileUploadForm_wrap_left_fileTitle{
+
+}
+
+.fileUploadForm_wrap_left_upload{
+    display: flex;
+    margin-top: 40px;
+}
+
+.fileUploadForm_wrap_left_upload_inputFile {
     display: none;
 }
-.fileUploadForm_wrap_buttonFile {
+.fileUploadForm_wrap_left_upload_buttonFile {
+
 }
-.fileUploadForm_wrap_buttonDownload {
-    margin-left: 10px;
+.fileUploadForm_wrap_left_upload_buttonUpload {
+    margin-left: 20px;
 }
-.feedback{
+
+.fileUploadForm_wrap_left_toolTitle{
     margin-top: 40px;
+}
+
+.fileUploadForm_wrap_left_tools{
+    margin-top: 55px;
+}
+
+.fileUploadForm_wrap_left_autoButton{
+
+}
+
+.fileUploadForm_wrap_left_toolButton{
+    margin-left: 20px;
+}
+
+.fileUploadForm_wrap_right{
+    width: 50%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
-.feedback_link{
-    padding: 15px 10px;
-    display: inline-block;
-    border: none;
-    color: rgba(255, 255, 255, 0.7);
-    background: rgba(255, 255, 255, 0.05);
-    text-decoration: none;
-    border-radius: 10px;
-    transition: all 0.2s;
-    box-shadow: 0 1px 0 0 rgba(159, 159, 159, 0.25), 0 -1px 0 0 rgba(139, 139, 139, 0.25), 1px 0 0 0 rgba(159, 159, 159, 0.25), -1px 0 0 0 rgba(139, 139, 139, 0.25), 1px -1px 0 0 rgba(149, 149, 149, 0.5), -1px 1px 0 0 rgba(149, 149, 149, 0.5), 1px 1px 0 0 rgba(169, 169, 169, 0.75), -1px -1px 0 0 rgba(128, 128, 128, 0.75);
+
+.fileUploadForm_wrap_right_fileName{
 }
-.feedback_link:hover{
-    box-shadow: 0 1px 0 0 rgba(165, 181, 222, 0.25), 0 -1px 0 0 rgba(34, 63, 171, 0.25), 1px 0 0 0 rgba(165, 181, 222, 0.25), -1px 0 0 0 rgba(34, 63, 171, 0.25), 1px -1px 0 0 rgba(195, 156, 208, 0.5), -1px 1px 0 0 rgba(34, 63, 171, 0.5), 1px 1px 0 0 rgba(135, 206, 235, 0.75), -1px -1px 0 0 rgba(34, 63, 171, 0.75);
-    color: white;
-    background: rgba(135, 206, 235, 0.05);
+
+
+.fileUploadForm_wrap_right_buttonDownload {
+    margin-top: 30px;
 }
