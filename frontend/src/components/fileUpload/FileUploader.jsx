@@ -11,6 +11,7 @@ const FileUpload = () => {
     const [isLoad, setLoad] = useState(false);
     const [isFile, setIsFile] = useState(false);
     const [fileName, setFileName] = useState("");
+    const [downloadFileName, setDownloadFileName] = useState("");
     const fileRef = useRef();
 
     function fileUploadHandler(e) {
@@ -22,6 +23,7 @@ const FileUpload = () => {
         } else {
             setIsFile(true);
             setFileName(fileName);
+            setBlob(null)
         }
     }
 
@@ -39,13 +41,12 @@ const FileUpload = () => {
         try {
             setLoad(true)
             const response = await FileService.sendAndGetFile(formData);
-            console.log(formData.get('file'))
             const oldFile = formData.get('file')
             const newFile = new File([response],`result-${oldFile.name}`, {lastModified: new Date().getTime(), type: oldFile.type})
-            console.log(newFile)
             await localforage.setItem('sourceFile', oldFile)
             await localforage.setItem('processedFile', newFile)
             setBlob(response);
+            setDownloadFileName(`result_${fileName}`)
         } catch (e) {
             console.log(e);
         } finally {
@@ -66,13 +67,13 @@ const FileUpload = () => {
             <FileUploaderForm ref={fileRef}
                               blob={blob}
                               isFile={isFile}
-                              fileName={`result-${fileName}`}
-                              originalFileName={fileName}
+                              downloadFileName={downloadFileName}
+                              fileName={fileName}
                               isLoad={isLoad}
                               chooseFile={chooseFile}
                               fileUploadHandler={fileUploadHandler}
                               sendFile={sendFile}
-                              downloadFile={(e) => downloadFile(e, blob, `result-${fileName}`)} />
+                              downloadFile={(e) => downloadFile(e, blob, downloadFileName)} />
         </div>
     );
 };
