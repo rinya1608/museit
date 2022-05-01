@@ -890,3 +890,18 @@ java.lang.IllegalArgumentException: InputStreamSource must not be null
 2022-04-21 23:11:10,504 DEBUG 9704 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
 2022-04-21 23:11:10,505 INFO  9704 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
 2022-04-21 23:11:12,528 INFO  9704 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.501 seconds (JVM running for 3.488)
+2022-04-21 23:22:34,131 INFO  1296 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 1296 (C:\myfolder\museit\target\classes started by Антон in c:\myfolder\museit)
+2022-04-21 23:22:34,144 DEBUG 1296 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-21 23:22:34,145 INFO  1296 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-04-21 23:22:35,864 INFO  1296 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.19 seconds (JVM running for 3.199)
+2022-04-21 23:22:52,063 INFO  9704 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 9704 (C:\myfolder\museit\target\classes started by Антон in C:\myfolder\museit)
+2022-04-21 23:22:52,077 DEBUG 9704 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-21 23:22:52,078 INFO  9704 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-04-21 23:22:54,220 INFO  9704 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.644 seconds (JVM running for 3.546)
+2022-04-21 23:23:01,474 INFO  9704 [http-nio-8080-exec-2] r.w.m.a.MusicAIGenerationApi.sendFile(MusicAIGenerationApi.java:28) : Send file to https://museitharm.herokuapp.com/api/file
+2022-04-21 23:23:02,489 INFO  9704 [http-nio-8080-exec-2] r.w.m.a.MusicAIGenerationApi.sendFile(MusicAIGenerationApi.java:32) : Service return 200 status code
+2022-04-21 23:23:02,492 INFO  9704 [http-nio-8080-exec-2] r.w.m.s.FileService.processFile(FileService.java:20) : File processing success
+2022-04-21 23:38:40,923 INFO  4452 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 4452 (C:\myfolder\museit\target\classes started by Антон in c:\myfolder\museit)
+2022-04-21 23:38:40,937 DEBUG 4452 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-04-21 23:38:40,939 INFO  4452 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-04-21 23:38:43,297 INFO  4452 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.865 seconds (JVM running for 4.006)
