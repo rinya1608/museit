@@ -33,7 +33,7 @@ public class SendEmail {
         .toString();
 
         mimeMessageHelper.setFrom("museitcorp@gmail.com");
-        mimeMessageHelper.setTo("vitaliyf.108@gmail.com");
+        mimeMessageHelper.setTo("museitcorp@gmail.com");
         mimeMessageHelper.setText(full_text, false);
         mimeMessageHelper.setSubject(subject);
         mimeMessageHelper.addAttachment("source_file.mid", source_file);

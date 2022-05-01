@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import classes from './Feedback.module.css'
 import localforage from "localforage";
 import LocalForageUtils from "../../utils/LocalForageUtils";
@@ -9,6 +9,12 @@ const FeedbackForm = ({afterSendFunction}) => {
     const contact = useRef();
     const message = useRef();
     const permission = useRef();
+    const [valid, setValid] = useState(false)
+
+    useEffect(async () => {
+        let flag = await LocalForageUtils.elementsValid('sourceFile', 'processedFile')
+        setValid(flag)
+    },[])
 
     async function sendFeedback(e) {
         e.preventDefault()
@@ -16,8 +22,8 @@ const FeedbackForm = ({afterSendFunction}) => {
         let sourceFile = null
         let processedFile = null
 
-        if (LocalForageUtils.elementsValid('sourceFile', 'processedFile') && permission.current.checked) {
-            console.log(permission.current.checked)
+        if (valid && permission.current.checked) {
+            console.log(LocalForageUtils.elementsValid('source', 'processedFile'))
             sourceFile = await localforage.getItem('sourceFile')
             processedFile = await localforage.getItem('processedFile')
         }
@@ -37,25 +43,24 @@ const FeedbackForm = ({afterSendFunction}) => {
         <div className={classes.feedback_wrap}>
             <form className={classes.feedback_form} onSubmit={sendFeedback}>
                 <div className={classes.feedback_row}><h2>Contact Us</h2></div>
-                <div className={classes.feedback_row}><input type={"text"} placeholder={"Name"} ref={name}
+                <div className={classes.feedback_row}><input type={"text"} placeholder={"Имя"} ref={name}
                                                              className={classes.feedback_row_field}/></div>
-                <div className={classes.feedback_row}><input type={"text"} placeholder={"E-mail/Phone"} ref={contact}
+                <div className={classes.feedback_row}><input type={"text"} placeholder={"E-mail/Телефон"} ref={contact}
                                                              className={classes.feedback_row_field}/></div>
-                <div className={classes.feedback_row}><textarea placeholder="Message" ref={message}
+                <div className={classes.feedback_row}><textarea placeholder="Сообщение" ref={message}
                                                                 className={classes.feedback_row_field}/></div>
                 {
-                    LocalForageUtils.elementsValid('sourceFile', 'processedFile') ?
-                        <div className={classes.feedback_row}>
-                            <input type={"checkbox"} id={"permission_use_checkbox"} ref={permission}
-                                   className={classes.feedback_row_checkbox}/>
-                            <label htmlFor={"permission_use_checkbox"} className={classes.feedback_row_label}>
-                                <div>Разрешить сайту использовать загруженный материал</div>
-                            </label>
-                        </div>
-                        :
-                        null
+                     valid ? <div className={classes.feedback_row}>
+                             <input type={"checkbox"} id={"permission_use_checkbox"} ref={permission}
+                                    className={classes.feedback_row_checkbox}/>
+                             <label htmlFor={"permission_use_checkbox"} className={classes.feedback_row_label}>
+                                 <div>Разрешить сайту использовать загруженный материал</div>
+                             </label>
+                         </div>
+                         :
+                         null
                 }
-                <button className={classes.feedback_send}>Send</button>
+                <button className={classes.feedback_send}>Отправить</button>
             </form>
         </div>
     );
