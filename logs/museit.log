@@ -444,3 +444,138 @@ javax.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not ac
 2022-04-29 13:44:22,786 INFO  17900 [http-nio-8080-exec-7] r.w.m.a.MusicAIGenerationApi.sendFile(MusicAIGenerationApi.java:28) : Send file to https://museitharm.herokuapp.com/api/file
 2022-04-29 13:44:23,623 INFO  17900 [http-nio-8080-exec-7] r.w.m.a.MusicAIGenerationApi.sendFile(MusicAIGenerationApi.java:32) : Service return 200 status code
 2022-04-29 13:44:23,623 INFO  17900 [http-nio-8080-exec-7] r.w.m.s.FileService.processFile(FileService.java:20) : File processing success
+2022-05-01 23:30:21,771 INFO  4324 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 4324 (C:\myfolder\museit\target\classes started by Антон in c:\myfolder\museit)
+2022-05-01 23:30:21,784 DEBUG 4324 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-01 23:30:21,785 INFO  4324 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-05-01 23:30:23,789 INFO  4324 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.542 seconds (JVM running for 3.809)
+2022-05-01 23:30:35,437 ERROR 4324 [http-nio-8080-exec-1] o.a.j.l.DirectJDKLog.log(DirectJDKLog.java:175) : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: InputStreamSource must not be null] with root cause
+java.lang.IllegalArgumentException: InputStreamSource must not be null
+	at org.springframework.util.Assert.notNull(Assert.java:201) ~[spring-core-5.3.16.jar:5.3.16]
+	at org.springframework.mail.javamail.MimeMessageHelper.addAttachment(MimeMessageHelper.java:1097) ~[spring-context-support-5.3.16.jar:5.3.16]
+	at org.springframework.mail.javamail.MimeMessageHelper.addAttachment(MimeMessageHelper.java:1074) ~[spring-context-support-5.3.16.jar:5.3.16]
+	at ru.web.museit.service.SendEmail.sendMailWithFile(SendEmail.java:39) ~[classes/:?]
+	at ru.web.museit.controller.FeedbackController.sendFeedback(FeedbackController.java:22) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:?]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.58.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.16.jar:5.3.16]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.58.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.58.jar:9.0.58]
+	at java.lang.Thread.run(Unknown Source) [?:?]
+2022-05-02 00:40:08,862 INFO  9560 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 9560 (C:\myfolder\museit\target\classes started by Антон in C:\myfolder\museit)
+2022-05-02 00:40:08,876 DEBUG 9560 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-02 00:40:08,877 INFO  9560 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-05-02 00:40:10,226 WARN  9560 [main] o.s.c.s.AbstractApplicationContext.refresh(AbstractApplicationContext.java:591) : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'registrationController': Unsatisfied dependency expressed through method 'sendFeedback' parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'ru.web.museit.request.RegisterRequest' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.web.bind.annotation.ModelAttribute(name="", value="", binding=true)}
+2022-05-02 00:40:10,268 ERROR 9560 [main] o.s.b.d.LoggingFailureAnalysisReporter.report(LoggingFailureAnalysisReporter.java:40) : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of method sendFeedback in ru.web.museit.controller.RegistrationController required a bean of type 'ru.web.museit.request.RegisterRequest' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.web.bind.annotation.ModelAttribute(name="", value="", binding=true)
+
+
+Action:
+
+Consider defining a bean of type 'ru.web.museit.request.RegisterRequest' in your configuration.
+
+2022-05-02 00:40:20,255 INFO  4548 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 4548 (C:\myfolder\museit\target\classes started by Антон in c:\myfolder\museit)
+2022-05-02 00:40:20,269 DEBUG 4548 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-02 00:40:20,271 INFO  4548 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-05-02 00:40:21,857 WARN  4548 [main] o.s.c.s.AbstractApplicationContext.refresh(AbstractApplicationContext.java:591) : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'registrationController': Unsatisfied dependency expressed through method 'sendFeedback' parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'ru.web.museit.request.RegisterRequest' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.web.bind.annotation.ModelAttribute(name="", value="", binding=true)}
+2022-05-02 00:40:21,910 ERROR 4548 [main] o.s.b.d.LoggingFailureAnalysisReporter.report(LoggingFailureAnalysisReporter.java:40) : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of method sendFeedback in ru.web.museit.controller.RegistrationController required a bean of type 'ru.web.museit.request.RegisterRequest' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.web.bind.annotation.ModelAttribute(name="", value="", binding=true)
+
+
+Action:
+
+Consider defining a bean of type 'ru.web.museit.request.RegisterRequest' in your configuration.
+
+2022-05-02 00:49:06,770 INFO  10040 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 10040 (C:\myfolder\museit\target\classes started by Антон in c:\myfolder\museit)
+2022-05-02 00:49:06,781 DEBUG 10040 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-02 00:49:06,783 INFO  10040 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-05-02 00:49:08,094 WARN  10040 [main] o.s.c.s.AbstractApplicationContext.refresh(AbstractApplicationContext.java:591) : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'registrationController': Unsatisfied dependency expressed through method 'sendFeedback' parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'ru.web.museit.request.FeedbackRequest' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.web.bind.annotation.ModelAttribute(name="", value="", binding=true)}
+2022-05-02 00:49:08,140 ERROR 10040 [main] o.s.b.d.LoggingFailureAnalysisReporter.report(LoggingFailureAnalysisReporter.java:40) : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of method sendFeedback in ru.web.museit.controller.RegistrationController required a bean of type 'ru.web.museit.request.FeedbackRequest' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.web.bind.annotation.ModelAttribute(name="", value="", binding=true)
+
+
+Action:
+
+Consider defining a bean of type 'ru.web.museit.request.FeedbackRequest' in your configuration.
+
+2022-05-02 00:50:41,756 INFO  2788 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 2788 (C:\myfolder\museit\target\classes started by Антон in c:\myfolder\museit)
+2022-05-02 00:50:41,770 DEBUG 2788 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-02 00:50:41,771 INFO  2788 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-05-02 00:50:43,627 INFO  2788 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.376 seconds (JVM running for 3.509)
+2022-05-02 00:51:12,057 INFO  3328 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 3328 (C:\myfolder\museit\target\classes started by Антон in C:\myfolder\museit)
+2022-05-02 00:51:12,070 DEBUG 3328 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-02 00:51:12,071 INFO  3328 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-05-02 00:51:14,034 INFO  3328 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.506 seconds (JVM running for 3.499)
