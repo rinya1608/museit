@@ -1,6 +1,18 @@
 server:
   port: ${PORT:8080}
 spring:
+  datasource:
+    password:
+    url: jdbc:postgresql://localhost:5432/registration?currentSchema=public&user=postgres&password=Pudge
+    username:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
   mail:
     host: smtp.gmail.com
     port: 587

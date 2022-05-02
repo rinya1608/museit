@@ -579,3 +579,242 @@ Consider defining a bean of type 'ru.web.museit.request.FeedbackRequest' in your
 2022-05-02 00:51:12,070 DEBUG 3328 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
 2022-05-02 00:51:12,071 INFO  3328 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
 2022-05-02 00:51:14,034 INFO  3328 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.506 seconds (JVM running for 3.499)
+2022-05-02 00:57:09,128 INFO  12540 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 12540 (C:\myfolder\museit\target\classes started by Антон in c:\myfolder\museit)
+2022-05-02 00:57:09,143 DEBUG 12540 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-02 00:57:09,145 INFO  12540 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-05-02 00:57:11,067 INFO  12540 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.435 seconds (JVM running for 3.536)
+2022-05-02 16:29:09,753 INFO  10744 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 10744 (C:\myfolder\museit\target\classes started by Антон in c:\myfolder\museit)
+2022-05-02 16:29:09,769 DEBUG 10744 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-02 16:29:09,770 INFO  10744 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-05-02 16:29:11,778 INFO  10744 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.541 seconds (JVM running for 3.733)
+2022-05-02 16:34:57,291 INFO  9320 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 9320 (C:\myfolder\museit\target\classes started by Антон in c:\myfolder\museit)
+2022-05-02 16:34:57,304 DEBUG 9320 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-02 16:34:57,305 INFO  9320 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-05-02 16:34:59,360 WARN  9320 [main] o.s.c.s.AbstractApplicationContext.refresh(AbstractApplicationContext.java:591) : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2022-05-02 16:34:59,410 ERROR 9320 [main] o.s.b.d.LoggingFailureAnalysisReporter.report(LoggingFailureAnalysisReporter.java:40) : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+2022-05-02 16:35:29,720 INFO  3172 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 3172 (C:\myfolder\museit\target\classes started by Антон in c:\myfolder\museit)
+2022-05-02 16:35:29,731 DEBUG 3172 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-02 16:35:29,732 INFO  3172 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-05-02 16:35:31,555 INFO  3172 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.296 seconds (JVM running for 3.756)
+2022-05-02 16:36:07,166 INFO  7200 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 7200 (C:\myfolder\museit\target\classes started by Антон in c:\myfolder\museit)
+2022-05-02 16:36:07,177 DEBUG 7200 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-02 16:36:07,179 INFO  7200 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-05-02 16:36:08,959 WARN  7200 [main] o.s.c.s.AbstractApplicationContext.refresh(AbstractApplicationContext.java:591) : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2022-05-02 16:36:09,005 ERROR 7200 [main] o.s.b.d.LoggingFailureAnalysisReporter.report(LoggingFailureAnalysisReporter.java:40) : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+2022-05-02 16:36:24,862 INFO  11320 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 11320 (C:\myfolder\museit\target\classes started by Антон in c:\myfolder\museit)
+2022-05-02 16:36:24,881 DEBUG 11320 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-02 16:36:24,883 INFO  11320 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-05-02 16:36:27,207 INFO  11320 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.882 seconds (JVM running for 3.939)
+2022-05-02 16:36:49,197 INFO  8652 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 8652 (C:\myfolder\museit\target\classes started by Антон in c:\myfolder\museit)
+2022-05-02 16:36:49,209 DEBUG 8652 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-02 16:36:49,211 INFO  8652 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-05-02 16:36:51,272 WARN  8652 [main] o.s.c.s.AbstractApplicationContext.refresh(AbstractApplicationContext.java:591) : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2022-05-02 16:36:51,323 ERROR 8652 [main] o.s.b.d.LoggingFailureAnalysisReporter.report(LoggingFailureAnalysisReporter.java:40) : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+2022-05-02 16:40:20,470 INFO  9108 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 9108 (C:\myfolder\museit\target\classes started by Антон in c:\myfolder\museit)
+2022-05-02 16:40:20,486 DEBUG 9108 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-02 16:40:20,488 INFO  9108 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-05-02 16:40:22,648 INFO  9108 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.653 seconds (JVM running for 3.724)
+2022-05-02 16:41:38,578 INFO  10096 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 10096 (C:\myfolder\museit\target\classes started by Антон in c:\myfolder\museit)
+2022-05-02 16:41:38,592 DEBUG 10096 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-02 16:41:38,594 INFO  10096 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-05-02 16:41:40,936 INFO  10096 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.894 seconds (JVM running for 4.092)
+2022-05-02 16:43:27,688 INFO  11100 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 11100 (C:\myfolder\museit\target\classes started by Антон in c:\myfolder\museit)
+2022-05-02 16:43:27,705 DEBUG 11100 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-02 16:43:27,708 INFO  11100 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-05-02 16:43:29,878 INFO  11100 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.683 seconds (JVM running for 3.923)
+2022-05-02 16:46:14,045 INFO  3260 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 3260 (C:\myfolder\museit\target\classes started by Антон in C:\myfolder\museit)
+2022-05-02 16:46:14,062 DEBUG 3260 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-02 16:46:14,064 INFO  3260 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-05-02 16:46:16,383 INFO  3260 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 2.921 seconds (JVM running for 3.889)
+2022-05-02 16:46:44,947 INFO  5540 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 5540 (C:\myfolder\museit\target\classes started by Антон in C:\myfolder\museit)
+2022-05-02 16:46:44,959 DEBUG 5540 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-02 16:46:44,961 INFO  5540 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-05-02 16:46:48,253 INFO  5540 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 3.79 seconds (JVM running for 4.765)
+2022-05-02 17:41:27,280 INFO  12004 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 12004 (C:\myfolder\museit\target\classes started by Антон in c:\myfolder\museit)
+2022-05-02 17:41:27,295 DEBUG 12004 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-02 17:41:27,297 INFO  12004 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-05-02 17:41:31,308 ERROR 12004 [main] c.z.h.p.HikariPool.throwPoolInitializationException(HikariPool.java:594) : HikariPool-1 - Exception during pool initialization.
+org.postgresql.util.PSQLException: The server requested SCRAM-based authentication, but no password was provided.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.lambda$doAuthentication$4(ConnectionFactoryImpl.java:791) ~[postgresql-42.3.3.jar:42.3.3]
+	at org.postgresql.core.v3.AuthenticationPluginManager.withPassword(AuthenticationPluginManager.java:81) ~[postgresql-42.3.3.jar:42.3.3]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:788) ~[postgresql-42.3.3.jar:42.3.3]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:180) ~[postgresql-42.3.3.jar:42.3.3]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235) ~[postgresql-42.3.3.jar:42.3.3]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49) ~[postgresql-42.3.3.jar:42.3.3]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:223) ~[postgresql-42.3.3.jar:42.3.3]
+	at org.postgresql.Driver.makeConnection(Driver.java:400) ~[postgresql-42.3.3.jar:42.3.3]
+	at org.postgresql.Driver.connect(Driver.java:259) ~[postgresql-42.3.3.jar:42.3.3]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:121) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-4.0.3.jar:?]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) [spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) [spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) [spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) [spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) [spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) [spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) [spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) [spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) [spring-boot-2.6.4.jar:2.6.4]
+	at ru.web.museit.MuseitApplication.main(MuseitApplication.java:12) [classes/:?]
+2022-05-02 17:41:31,328 WARN  12004 [main] o.h.e.j.e.i.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:133) : HHH000342: Could not obtain connection to query metadata
+org.postgresql.util.PSQLException: The server requested SCRAM-based authentication, but no password was provided.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.lambda$doAuthentication$4(ConnectionFactoryImpl.java:791) ~[postgresql-42.3.3.jar:42.3.3]
+	at org.postgresql.core.v3.AuthenticationPluginManager.withPassword(AuthenticationPluginManager.java:81) ~[postgresql-42.3.3.jar:42.3.3]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:788) ~[postgresql-42.3.3.jar:42.3.3]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:180) ~[postgresql-42.3.3.jar:42.3.3]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235) ~[postgresql-42.3.3.jar:42.3.3]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49) ~[postgresql-42.3.3.jar:42.3.3]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:223) ~[postgresql-42.3.3.jar:42.3.3]
+	at org.postgresql.Driver.makeConnection(Driver.java:400) ~[postgresql-42.3.3.jar:42.3.3]
+	at org.postgresql.Driver.connect(Driver.java:259) ~[postgresql-42.3.3.jar:42.3.3]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:121) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-4.0.3.jar:?]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) [spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) [spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) [spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) [spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) [spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) [spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) [spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) [spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) [spring-boot-2.6.4.jar:2.6.4]
+	at ru.web.museit.MuseitApplication.main(MuseitApplication.java:12) [classes/:?]
+2022-05-02 17:41:31,752 WARN  12004 [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor(JpaBaseConfiguration.java:219) : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-02 17:41:32,727 INFO  12004 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 5.977 seconds (JVM running for 7.115)
+2022-05-02 17:44:08,887 INFO  5824 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 5824 (C:\myfolder\museit\target\classes started by Антон in c:\myfolder\museit)
+2022-05-02 17:44:08,900 DEBUG 5824 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-02 17:44:08,902 INFO  5824 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-05-02 17:44:11,881 WARN  5824 [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor(JpaBaseConfiguration.java:219) : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-02 17:44:12,686 INFO  5824 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 4.274 seconds (JVM running for 5.424)
+2022-05-02 18:03:12,882 INFO  8028 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 8028 (C:\myfolder\museit\target\classes started by Антон in c:\myfolder\museit)
+2022-05-02 18:03:12,894 DEBUG 8028 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-02 18:03:12,895 INFO  8028 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-05-02 18:03:15,852 WARN  8028 [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor(JpaBaseConfiguration.java:219) : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-02 18:03:16,628 INFO  8028 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 4.218 seconds (JVM running for 5.291)
+2022-05-02 18:20:53,401 INFO  5596 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) : Starting MuseitApplication using Java 17.0.2 on DESKTOP-VPNMUKV with PID 5596 (C:\myfolder\museit\target\classes started by Антон in c:\myfolder\museit)
+2022-05-02 18:20:53,416 DEBUG 5596 [main] o.s.b.StartupInfoLogger.logStarting(StartupInfoLogger.java:56) : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-05-02 18:20:53,417 INFO  5596 [main] o.s.b.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) : No active profile set, falling back to 1 default profile: "default"
+2022-05-02 18:20:56,847 WARN  5596 [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor(JpaBaseConfiguration.java:219) : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-02 18:20:57,649 INFO  5596 [main] o.s.b.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) : Started MuseitApplication in 4.823 seconds (JVM running for 5.986)
