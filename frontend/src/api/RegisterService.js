@@ -4,7 +4,7 @@ export class RegisterService {
             method: "POST",
             body: formData
         }).then(res => {
-            return res.ok;
+            return res.text();
         });
     }
 }

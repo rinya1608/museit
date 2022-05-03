@@ -10,4 +10,5 @@ import lombok.ToString;
 public class RegisterRequest {
     private String login;
     private String password;
+    private int logintype;
 }

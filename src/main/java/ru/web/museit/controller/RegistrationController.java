@@ -14,6 +14,6 @@ public class RegistrationController {
     @PostMapping(path = "api/register")
     public ResponseEntity<?> sendFeedback(@ModelAttribute RegisterRequest feedbackRequest) throws MessagingException {
         System.out.println(feedbackRequest);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok("Ответ");
     }
 }
