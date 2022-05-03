@@ -16,7 +16,7 @@ const FeedbackForm = () => {
         const formData = new FormData()
         const logintype = 0
         
-        formData.append('login', login.current.value)
+        formData.append('username', login.current.value)
         formData.append('password', password.current.value)
         formData.append('logintype', logintype)
         
