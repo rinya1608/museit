@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import classes from './Register.module.css'
 import localforage from "localforage";
 import LocalForageUtils from "../../utils/LocalForageUtils";
-import {RegisterService} from "../../api/RegisterService";
+import {LoginService} from "../../api/LoginService";
 
 const FeedbackForm = ({afterSendFunction}) => {
     const login = useRef();
@@ -16,9 +16,8 @@ const FeedbackForm = ({afterSendFunction}) => {
         
         formData.append('username', login.current.value)
         formData.append('password', password.current.value)
-        formData.append('logintype', logintype)
         
-        await RegisterService.sendFeedback(formData)
+        await LoginService.sendFeedback(formData)
         e.target.reset()
         afterSendFunction()
     }

@@ -7,9 +7,11 @@ import {RegisterService} from "../../api/RegisterService";
 const FeedbackForm = () => {
     const login = useRef();
     const password = useRef();
-    let answer;
+    let answermsg;
+    let colormsg;
     
 
+    // Ренатыч переделай пж в норм вид если тут говно
     async function sendFeedback(e) {
         e.preventDefault()
         
@@ -19,10 +21,16 @@ const FeedbackForm = () => {
         formData.append('username', login.current.value)
         formData.append('password', password.current.value)
         formData.append('logintype', logintype)
-        
-        answer = await RegisterService.sendFeedback(formData)
-        document.getElementById("requestmsg").innerHTML = answer
-        console.log(answer)
+
+        if (await RegisterService.sendFeedback(formData) == "true"){
+            answermsg = "Регистрация успешна"
+            colormsg = "color:#4C9A2A;"
+        } else {
+            answermsg = "Имя пользователя занято"
+            colormsg = "color:#8b0000;"
+        }
+        document.getElementById("requestmsg").innerHTML = answermsg
+        document.getElementById("requestmsg").style = colormsg
         e.target.reset()
 
     }
@@ -37,7 +45,7 @@ const FeedbackForm = () => {
                 <div className={classes.feedback_row}><input type={"text"} placeholder={"Пароль"} ref={password}
                                                              className={classes.feedback_row_field}/></div>
 
-                <div><div id="requestmsg" style={{color:`#8b0000`}}></div></div>
+                <div><div id="requestmsg"></div></div>
                 <button className={classes.feedback_send}>Зарегистрироваться</button>
             </form>
         </div>

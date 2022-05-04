@@ -1,10 +1,10 @@
-export class FeedbackService {
+export class LoginService {
     static async sendFeedback(formData) {
-        return await fetch('api/feedback', {
+        return await fetch('api2/login', {
             method: "POST",
             body: formData
         }).then(res => {
-            return res;
+            return res.text();
         });
     }
 }

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.AllArgsConstructor;
 
 @RestController
-// @RequestMapping(path = "api/register")
+@RequestMapping(path = "api/register")
 @AllArgsConstructor
 public class RegistrationController {
 
@@ -24,9 +24,9 @@ public class RegistrationController {
     // }
     private RegistrationSevice registrationService;
         
-    @PostMapping(path = "api/register")
-    public String register(@ModelAttribute RegistrationRequest request){
-        System.out.println(request);
-        return registrationService.register(request);
+    @PostMapping
+    public ResponseEntity<?> register(@ModelAttribute RegistrationRequest request){
+        System.out.println(request.getPassword());
+        return ResponseEntity.ok(registrationService.register(request));
     }
 }
