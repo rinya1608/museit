@@ -11,7 +11,6 @@ const Footer = () => {
             <ul className={classes.footer_menu}>
                 <li><a href='#'>Согласие на обработку данных</a></li>
                 <li><a href='#' onClick={() => setModalActive(true)}>Обратная связь</a></li>
-                <li><a href='#'>Согласие на обработку данных</a></li>
             </ul>
             <Modal active={modalActive} setActive={setModalActive}>
                 <FeedbackForm afterSendFunction={() => setModalActive(false)}/>
