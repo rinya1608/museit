@@ -62,7 +62,7 @@ const About = () => {
             </div>
             <a name='fileUpload'></a>
             <FileUploader/>
-            <a name='what'></a>
+            {/*<a name='what'></a>
             <div className={classes.about_what}>
                 <div className={classes.about_what_form}>
                     <div className={classes.about_what_form_title}><h1>Введите номер телефона или E-mail для регистрации</h1></div>
@@ -83,7 +83,7 @@ const About = () => {
                         <li><img src={calendarIcon}/><span>На месяц - </span></li>
                     </ul>
                 </div>
-            </div>
+            </div>*/}
             <a name='team'></a>
             <div className={classes.about_team}>
                 <h1>Наша команда</h1>

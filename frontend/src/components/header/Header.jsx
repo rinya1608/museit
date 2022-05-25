@@ -19,12 +19,12 @@ const Header = () => {
                     <li><a href='#otziv'>Отзывы</a></li>
                     <li><a href='#what'>Цены</a></li>
                 </ul>
-                <div className={classes.header_auth}>
+                {/*<div className={classes.header_auth}>
                     <ul>
                         <li>Вход</li>
                         <li>Регистрация</li>
                     </ul>
-                </div>
+                </div>*/}
             </div>
         </div>
     );

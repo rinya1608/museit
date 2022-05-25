@@ -29,9 +29,9 @@ const FileUploaderForm = forwardRef(({blob, isFile, downloadFileName, fileName, 
                             </div>
                             <h3 className={classes.fileUploadForm_wrap_left_toolTitle}>Выберите инструменты</h3>
                             <div className={classes.fileUploadForm_wrap_left_tools}>
-                                <button className={classes.fileUploadForm_wrap_left_autoButton}>
+                                {/*<button className={classes.fileUploadForm_wrap_left_autoButton}>
                                     Авто
-                                </button>
+                                </button>*/}
                                 <button className={classes.fileUploadForm_wrap_left_toolButton}>
                                     Инструмент
                                 </button>
