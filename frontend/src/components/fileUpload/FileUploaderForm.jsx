@@ -1,9 +1,24 @@
 import React, {forwardRef} from 'react';
 import classes from "./FileUploader.module.css";
+import "./instrument-select.css"
 import Loader from "../common/loader/Loader";
+import Select from 'react-select';
 
-const FileUploaderForm = forwardRef(({blob, isFile, downloadFileName, fileName, chooseFile, fileUploadHandler, sendFile, downloadFile, isLoad}, ref) => {
+const FileUploaderForm = forwardRef(({
+                                         blob,
+                                         isFile,
+                                         downloadFileName,
+                                         fileName,
+                                         chooseFile,
+                                         fileUploadHandler,
+                                         sendFile,
+                                         downloadFile,
+                                         isLoad
+                                     }, ref) => {
 
+    const options = [
+        { value: 'piano', label: 'Фортепиано' }
+    ]
 
 
     return (
@@ -17,14 +32,17 @@ const FileUploaderForm = forwardRef(({blob, isFile, downloadFileName, fileName, 
                         <div className={classes.fileUploadForm_wrap_left}>
                             <h3 className={classes.fileUploadForm_wrap_left_fileTitle}>{fileName ? `Загрузить файл ${fileName}` : 'Выбрать файл'}</h3>
                             <div className={classes.fileUploadForm_wrap_left_upload}>
-                                <input className={classes.fileUploadForm_wrap_left_upload_inputFile} type="file" multiple={false}
+                                <input className={classes.fileUploadForm_wrap_left_upload_inputFile} type="file"
+                                       multiple={false}
                                        ref={ref} onChange={fileUploadHandler}/>
-                                <button className={classes.fileUploadForm_wrap_left_upload_buttonFile} id={"fileUploadFormInput"}
+                                <button className={classes.fileUploadForm_wrap_left_upload_buttonFile}
+                                        id={"fileUploadFormInput"}
                                         onClick={chooseFile}>
                                     Выбрать файл
                                 </button>
                                 {
-                                    isFile ? <button onClick={sendFile} className={classes.fileUploadForm_wrap_left_upload_buttonUpload}>Загрузить</button> : ''
+                                    isFile ? <button onClick={sendFile}
+                                                     className={classes.fileUploadForm_wrap_left_upload_buttonUpload}>Загрузить</button> : ''
                                 }
                             </div>
                             <h3 className={classes.fileUploadForm_wrap_left_toolTitle}>Выберите инструменты</h3>
@@ -32,16 +50,20 @@ const FileUploaderForm = forwardRef(({blob, isFile, downloadFileName, fileName, 
                                 {/*<button className={classes.fileUploadForm_wrap_left_autoButton}>
                                     Авто
                                 </button>*/}
-                                <button className={classes.fileUploadForm_wrap_left_toolButton}>
-                                    Инструмент
-                                </button>
+                                <Select options={options}
+                                        classNamePrefix='instrument_select'
+                                        defaultValue={options[0]}
+                                        placeholder='Выбрать'
+                                />
                             </div>
                         </div>
                         {
                             blob ?
                                 <div className={classes.fileUploadForm_wrap_right}>
                                     <h3 className={classes.fileUploadForm_wrap_right_fileName}>{downloadFileName}</h3>
-                                    <button onClick={downloadFile} className={classes.fileUploadForm_wrap_right_buttonDownload}>Cкачать</button>
+                                    <button onClick={downloadFile}
+                                            className={classes.fileUploadForm_wrap_right_buttonDownload}>Cкачать
+                                    </button>
                                 </div>
                                 : null
                         }
