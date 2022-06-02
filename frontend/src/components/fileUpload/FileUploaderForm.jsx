@@ -3,6 +3,7 @@ import classes from "./FileUploader.module.css";
 import "./instrument-select.css"
 import Loader from "../common/loader/Loader";
 import Select from 'react-select';
+import FileUploaderConstants from "./FileUploaderConstants";
 
 const FileUploaderForm = forwardRef(({
                                          blob,
@@ -13,12 +14,11 @@ const FileUploaderForm = forwardRef(({
                                          fileUploadHandler,
                                          sendFile,
                                          downloadFile,
-                                         isLoad
+                                         isLoad,
+                                         onSelectGeneratorStyleChange
                                      }, ref) => {
 
-    const options = [
-        {value: 'piano', label: 'Фортепиано'}
-    ]
+
 
 
     return (
@@ -48,13 +48,26 @@ const FileUploaderForm = forwardRef(({
                                                      className={classes.fileUploadForm_wrap_left_upload_buttonUpload}>Загрузить</button> : ''
                                 }
                             </div>
+                            {fileName ? <h3 className={classes.fileUploadForm_wrap_left_toolTitle}>Выбрать стиль</h3> : null}
+                            {
+                                fileName ?
+                                    <div className={classes.fileUploadForm_wrap_left_tools}>
+                                        <Select options={FileUploaderConstants.generatorStyles}
+                                                classNamePrefix='file_upload_select'
+                                                defaultValue={FileUploaderConstants.generatorStyles[0]}
+                                                placeholder='Выбрать'
+                                                onChange={onSelectGeneratorStyleChange}
+                                        />
+                                    </div>
+                                    : null
+                            }
                             {fileName ? <h3 className={classes.fileUploadForm_wrap_left_toolTitle}>Выберите инструменты</h3> : null}
                             {
                                 fileName ?
                                     <div className={classes.fileUploadForm_wrap_left_tools}>
-                                        <Select options={options}
-                                                classNamePrefix='instrument_select'
-                                                defaultValue={options[0]}
+                                        <Select options={FileUploaderConstants.instruments}
+                                                classNamePrefix='file_upload_select'
+                                                defaultValue={FileUploaderConstants.instruments[0]}
                                                 placeholder='Выбрать'
                                         />
                                     </div>
