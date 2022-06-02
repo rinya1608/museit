@@ -103,7 +103,7 @@
 }
 
 .fileUploadForm_wrap_left_upload_buttonFile {
-
+    width: 250px !important;
 }
 
 .fileUploadForm_wrap_left_upload_buttonUpload {

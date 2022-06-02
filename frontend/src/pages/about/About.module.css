@@ -100,7 +100,6 @@
 
 .about_why{
     width: 100%;
-    margin-top:100px;
 }
 
 .about_why_title{
@@ -152,7 +151,7 @@
 
 .about_why_images div:nth-child(2){
     background: url("../../img/why2.jpg") no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
 }
 
 .about_why_images div:last-child{

@@ -17,7 +17,7 @@ const FileUploaderForm = forwardRef(({
                                      }, ref) => {
 
     const options = [
-        { value: 'piano', label: 'Фортепиано' }
+        {value: 'piano', label: 'Фортепиано'}
     ]
 
 
@@ -30,32 +30,36 @@ const FileUploaderForm = forwardRef(({
                     :
                     <div className={classes.fileUploadForm_wrap}>
                         <div className={classes.fileUploadForm_wrap_left}>
-                            <h3 className={classes.fileUploadForm_wrap_left_fileTitle}>{fileName ? `Загрузить файл ${fileName}` : 'Выбрать файл'}</h3>
+                            <h3 className={classes.fileUploadForm_wrap_left_fileTitle}>{fileName ? `Загрузить файл ${fileName}` : 'Выбрать файл(*.mid)'}</h3>
                             <div className={classes.fileUploadForm_wrap_left_upload}>
                                 <input className={classes.fileUploadForm_wrap_left_upload_inputFile} type="file"
                                        multiple={false}
-                                       ref={ref} onChange={fileUploadHandler}/>
+                                       ref={ref}
+                                       onChange={fileUploadHandler}
+                                       accept=".mid"
+                                />
                                 <button className={classes.fileUploadForm_wrap_left_upload_buttonFile}
                                         id={"fileUploadFormInput"}
                                         onClick={chooseFile}>
-                                    Выбрать файл
+                                    {fileName ? 'Выбрать другой файл' : 'Выбрать файл'}
                                 </button>
                                 {
                                     isFile ? <button onClick={sendFile}
                                                      className={classes.fileUploadForm_wrap_left_upload_buttonUpload}>Загрузить</button> : ''
                                 }
                             </div>
-                            <h3 className={classes.fileUploadForm_wrap_left_toolTitle}>Выберите инструменты</h3>
-                            <div className={classes.fileUploadForm_wrap_left_tools}>
-                                {/*<button className={classes.fileUploadForm_wrap_left_autoButton}>
-                                    Авто
-                                </button>*/}
-                                <Select options={options}
-                                        classNamePrefix='instrument_select'
-                                        defaultValue={options[0]}
-                                        placeholder='Выбрать'
-                                />
-                            </div>
+                            {fileName ? <h3 className={classes.fileUploadForm_wrap_left_toolTitle}>Выберите инструменты</h3> : null}
+                            {
+                                fileName ?
+                                    <div className={classes.fileUploadForm_wrap_left_tools}>
+                                        <Select options={options}
+                                                classNamePrefix='instrument_select'
+                                                defaultValue={options[0]}
+                                                placeholder='Выбрать'
+                                        />
+                                    </div>
+                                : null
+                            }
                         </div>
                         {
                             blob ?
