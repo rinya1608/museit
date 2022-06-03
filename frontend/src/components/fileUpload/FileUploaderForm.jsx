@@ -15,7 +15,8 @@ const FileUploaderForm = forwardRef(({
                                          sendFile,
                                          downloadFile,
                                          isLoad,
-                                         onSelectGeneratorStyleChange
+                                         onSelectGeneratorStyleChange,
+                                         generatorStyleValue
                                      }, ref) => {
 
 
@@ -54,7 +55,7 @@ const FileUploaderForm = forwardRef(({
                                     <div className={classes.fileUploadForm_wrap_left_tools}>
                                         <Select options={FileUploaderConstants.generatorStyles}
                                                 classNamePrefix='file_upload_select'
-                                                defaultValue={FileUploaderConstants.generatorStyles[0]}
+                                                defaultValue={generatorStyleValue}
                                                 placeholder='Выбрать'
                                                 onChange={onSelectGeneratorStyleChange}
                                         />

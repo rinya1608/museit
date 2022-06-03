@@ -12,7 +12,7 @@ const FileUpload = () => {
     const [isFile, setIsFile] = useState(false);
     const [fileName, setFileName] = useState("");
     const [downloadFileName, setDownloadFileName] = useState("");
-    const [generatorStyleValue, setGeneratorStyleValue] = useState(FileUploaderConstants.generatorStyles[0].value);
+    const [generatorStyleValue, setGeneratorStyleValue] = useState(FileUploaderConstants.generatorStyles[0]);
     const fileRef = useRef();
 
     function fileUploadHandler(e) {
@@ -59,12 +59,12 @@ const FileUpload = () => {
         e.preventDefault();
         let formData = new FormData();
         formData.append("file", fileRef.current.files[0]);
-        formData.append("generatorStyle", generatorStyleValue)
+        formData.append("generatorStyle", generatorStyleValue.value)
         getNewFile(formData);
     }
 
     function onSelectGeneratorStyleChange(generatorStyle){
-        setGeneratorStyleValue(generatorStyle.value)
+        setGeneratorStyleValue(generatorStyle)
     }
 
 
@@ -80,6 +80,7 @@ const FileUpload = () => {
                               fileUploadHandler={fileUploadHandler}
                               sendFile={sendFile}
                               onSelectGeneratorStyleChange={onSelectGeneratorStyleChange}
+                              generatorStyleValue={generatorStyleValue}
                               downloadFile={(e) => downloadFile(e, blob, downloadFileName)}/>
         </div>
     );
