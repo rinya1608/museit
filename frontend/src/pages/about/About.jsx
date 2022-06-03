@@ -1,10 +1,9 @@
 import React from 'react';
 import classes from "./About.module.css";
 import checkIcon from '../../img/icon/check.svg'
-import calendarIcon from '../../img/icon/calendar.svg'
-import phoneIcon from '../../img/icon/phone.svg'
-import emailIcon from '../../img/icon/email.svg'
-import lockIcon from '../../img/icon/lock.svg'
+import oneNumberIcon from '../../img/icon/one_number.svg'
+import twoNumberIcon from '../../img/icon/two_number.svg'
+import threeNumberIcon from '../../img/icon/three_number.svg'
 import Slider from "../../components/common/slider/Slider";
 import SliderElement from "../../components/common/slider/SliderElement";
 import Footer from "../../components/footer/Footer";
@@ -15,14 +14,14 @@ const About = () => {
         <div className={classes.about}>
             <div className={classes.about_top}>
                 <div className={classes.about_top_text}>
-                    Museit<br/>Ваш музыкальный<br/>помощник
+                    MuseIT<br/>Ваш музыкальный<br/>помощник
                 </div>
             </div>
             <a name='aboutProduct'></a>
             <div className={classes.about_make}>
                 <div className={classes.about_make_left}>
                     <h1 className={classes.about_make_left_title}>
-                        Просто и удобно  создать аранжировку  для вашей мелодии
+                        Просто и удобно создать аранжировку для вашей мелодии
                     </h1>
                     <span className={classes.about_make_left_text}>
                         MuseIT - это веб-приложение, которое позволяет автоматически генерировать аккомпанемент к мелодии, а также создавать полноценные аранжировки.
@@ -30,20 +29,37 @@ const About = () => {
 
 
                     </span>
-                    <button className={classes.about_make_left_button}>
+                    {<button className={classes.about_make_left_button}>
                         <a href='#fileUpload'>Создайте свою аранжировку</a>
-                    </button>
+                    </button>}
                 </div>
                 <div className={classes.about_make_right}/>
             </div>
+            <a name='instruction'></a>
+            <div className={classes.about_instruction}>
+                <h1 className={classes.about_instruction_title}>Как пользоваться нашим сервисом:</h1>
+                <div className={classes.about_instruction_wrap}>
+
+                    Исходная мелодия должна быть одноголосой (состоять из одной дорожки) и представлена в виде файла с расширением .mid
+                    Для создания такого файла можно воспользоваться бесплатным приложением musescore<br/>
+                    <ul>
+                        <li> <img src={oneNumberIcon}/><span>Созданный файл загружаем в наше приложение</span></li>
+                        <li><img src={twoNumberIcon}/><span>Скачиваем результат</span></li>
+                        <li><img src={threeNumberIcon}/><span>Читаем его с помощью musescore</span></li>
+                    </ul>
+                </div>
+            </div>
+            <a name='fileUpload'></a>
+            <FileUploader/>
             <div className={classes.about_why}>
                 <h1 className={classes.about_why_title}>
-                   Мы с вами...
+                    Мы с вами...
                 </h1>
                 <ul className={classes.about_why_list}>
                     <li className={classes.about_why_list_el}>
                         <img src={checkIcon} className={classes.about_why_list_el_icon}/>
-                        <span className={classes.about_why_list_el_text}>Когда нужны новые идеи и больше инструментов</span>
+                        <span
+                            className={classes.about_why_list_el_text}>Когда нужны новые идеи и больше инструментов</span>
                     </li>
                     <li className={classes.about_why_list_el}>
                         <img src={checkIcon} className={classes.about_why_list_el_icon}/>
@@ -60,9 +76,8 @@ const About = () => {
                     <div/>
                 </div>
             </div>
-            <a name='fileUpload'></a>
-            <FileUploader/>
-            <a name='what'></a>
+
+            {/*<a name='what'></a>
             <div className={classes.about_what}>
                 <div className={classes.about_what_form}>
                     <div className={classes.about_what_form_title}><h1>Введите номер телефона или E-mail для регистрации</h1></div>
@@ -83,7 +98,7 @@ const About = () => {
                         <li><img src={calendarIcon}/><span>На месяц - </span></li>
                     </ul>
                 </div>
-            </div>
+            </div>*/}
             <a name='team'></a>
             <div className={classes.about_team}>
                 <h1>Наша команда</h1>

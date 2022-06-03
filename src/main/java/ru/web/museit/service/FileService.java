@@ -6,6 +6,7 @@ import org.springframework.core.io.ByteArrayResource;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import ru.web.museit.api.MusicAIGenerationApi;
+import ru.web.museit.request.FileRequest;
 
 @Service
 @RequiredArgsConstructor
@@ -14,9 +15,10 @@ public class FileService {
 
     private final MusicAIGenerationApi musicAIGenerationApi;
 
-    public ByteArrayResource processFile(MultipartFile file) {
+    public ByteArrayResource processFile(FileRequest fileRequest) {
         try {
-            byte[] fileBytes = musicAIGenerationApi.sendFile(file.getBytes(), file.getOriginalFilename());
+            MultipartFile file = fileRequest.getFile();
+            byte[] fileBytes = musicAIGenerationApi.sendFile(file.getBytes(), file.getOriginalFilename(), fileRequest.getGeneratorStyle());
             log.info("File processing success");
             return new ByteArrayResource(fileBytes);
         } catch (Exception e) {
