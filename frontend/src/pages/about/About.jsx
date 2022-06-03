@@ -41,11 +41,11 @@ const About = () => {
                 <div className={classes.about_instruction_wrap}>
 
                     Исходная мелодия должна быть одноголосой (состоять из одной дорожки) и представлена в виде файла с расширением .mid
-                    Для создания такого файла можно воспользоваться бесплатным приложением musescore<br/>
+                    Для создания такого файла можно воспользоваться бесплатным приложением <a href="https://musescore.org/ru">musescore</a><br/>
                     <ul>
                         <li> <img src={oneNumberIcon}/><span>Созданный файл загружаем в наше приложение</span></li>
                         <li><img src={twoNumberIcon}/><span>Скачиваем результат</span></li>
-                        <li><img src={threeNumberIcon}/><span>Читаем его с помощью musescore</span></li>
+                        <li><img src={threeNumberIcon}/><span>Читаем его с помощью <a href="https://musescore.org/ru">musescore</a></span></li>
                     </ul>
                 </div>
             </div>
