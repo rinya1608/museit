@@ -15,9 +15,9 @@ const Header = () => {
                 </div>
                 <ul className={classes.header_menu}>
                     <li><a href='#aboutProduct'>О продукте</a></li>
+                    <li><a href='#instruction'>Инструкция</a></li>
                     <li><a href='#team'>Наша команда</a></li>
                     <li><a href='#otziv'>Отзывы</a></li>
-                    <li><a href='#what'>Цены</a></li>
                 </ul>
                 {/*<div className={classes.header_auth}>
                     <ul>

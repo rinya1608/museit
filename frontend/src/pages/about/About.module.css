@@ -98,9 +98,54 @@
     background-size: 100%;
 }
 
+.about_instruction{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.about_instruction_title{
+    font-size: 26px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.about_instruction_wrap{
+    text-align: left;
+    margin-top: 50px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.about_instruction_wrap ul{
+    margin-top: 20px;
+}
+
+.about_instruction_wrap li{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.about_instruction_wrap img{
+    width: 50px;
+}
+
+.about_instruction_wrap span{
+    margin-left: 5px;
+}
+
+.about_instruction_icon{
+    width: 50px;
+}
+
 .about_why{
     width: 100%;
     margin-top: 150px;
+
 }
 
 .about_why_title{

@@ -1,6 +1,9 @@
 import React from 'react';
 import classes from "./About.module.css";
 import checkIcon from '../../img/icon/check.svg'
+import oneNumberIcon from '../../img/icon/one_number.svg'
+import twoNumberIcon from '../../img/icon/two_number.svg'
+import threeNumberIcon from '../../img/icon/three_number.svg'
 import Slider from "../../components/common/slider/Slider";
 import SliderElement from "../../components/common/slider/SliderElement";
 import Footer from "../../components/footer/Footer";
@@ -26,11 +29,25 @@ const About = () => {
 
 
                     </span>
-                    {/*<button className={classes.about_make_left_button}>
+                    {<button className={classes.about_make_left_button}>
                         <a href='#fileUpload'>Создайте свою аранжировку</a>
-                    </button>*/}
+                    </button>}
                 </div>
                 <div className={classes.about_make_right}/>
+            </div>
+            <a name='instruction'></a>
+            <div className={classes.about_instruction}>
+                <h1 className={classes.about_instruction_title}>Как пользоваться нашим сервисом:</h1>
+                <div className={classes.about_instruction_wrap}>
+
+                    Исходная мелодия должна быть одноголосой (состоять из одной дорожки) и представлена в виде файла с расширением .mid
+                    Для создания такого файла можно воспользоваться бесплатным приложением musescore<br/>
+                    <ul>
+                        <li> <img src={oneNumberIcon}/><span>Созданный файл загружаем в наше приложение</span></li>
+                        <li><img src={twoNumberIcon}/><span>Скачиваем результат</span></li>
+                        <li><img src={threeNumberIcon}/><span>Читаем его с помощью musescore</span></li>
+                    </ul>
+                </div>
             </div>
             <a name='fileUpload'></a>
             <FileUploader/>
