@@ -9,15 +9,15 @@ import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.logging.log4j.Level;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import ru.web.museit.property.ApiProperties;
 
-import java.util.Map;
-
 @Component
+@Profile("prod")
 @RequiredArgsConstructor
 @Log4j2
-public class MusicAIGenerationApi {
+public class MusicGenerationApiAI implements MusicGenerationApi {
 
     private final ApiProperties apiProperties;
 
