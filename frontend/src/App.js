@@ -1,24 +1,18 @@
 import React from "react";
-import FileUploader from "./components/fileUpload/FileUploader";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Wrapper from './components/common/Wrapper'
 import About from "./pages/about/About";
-import Header from "./components/header/Header";
+import MidiEditor from "editor/MidiEditor";
 
 function App() {
 
     return (
-        <div className="app">
-            <Header/>
-            <div className="main">
-                <BrowserRouter>
-                    <Routes>
-                        <Route path="/" element={<About/>}/>
-                        <Route path="/file" element={<FileUploader/>}/>
-                    </Routes>
-                </BrowserRouter>
-            </div>
-
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Wrapper><About/></Wrapper>}/>
+                <Route path="/edit" element={<MidiEditor/>}/>
+            </Routes>
+        </BrowserRouter>
     );
 }
 
