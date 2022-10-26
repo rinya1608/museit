@@ -4,6 +4,7 @@ import "./instrument-select.css"
 import Loader from "../common/loader/Loader";
 import Select from 'react-select';
 import FileUploaderConstants from "./FileUploaderConstants";
+import {Link} from "react-router-dom";
 
 const FileUploaderForm = forwardRef(({
                                          blob,
@@ -82,6 +83,9 @@ const FileUploaderForm = forwardRef(({
                                     <button onClick={downloadFile}
                                             className={classes.fileUploadForm_wrap_right_buttonDownload}>Cкачать
                                     </button>
+                                    <Link className={classes.fileUploadForm_wrap_right_buttonDownload} to={"/edit"}>
+                                        Редактировать
+                                    </Link>
                                 </div>
                                 : null
                         }

@@ -46,6 +46,7 @@ const FileUpload = () => {
             const newFile = new File([response],`result-${oldFile.name}`, {lastModified: new Date().getTime(), type: oldFile.type})
             await localforage.setItem('sourceFile', oldFile)
             await localforage.setItem('processedFile', newFile)
+            await localforage.setItem('editFile', newFile)
             setBlob(response);
             setDownloadFileName(`result_${fileName}`)
         } catch (e) {
