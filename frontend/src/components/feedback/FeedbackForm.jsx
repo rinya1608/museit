@@ -11,9 +11,9 @@ const FeedbackForm = ({afterSendFunction}) => {
     const permission = useRef();
     const [valid, setValid] = useState(false)
 
-    useEffect(async () => {
-        let flag = await LocalForageUtils.elementsValid('sourceFile', 'processedFile')
-        setValid(flag)
+    useEffect(() => {
+        LocalForageUtils.elementsValid('sourceFile', 'processedFile')
+            .then(flag => setValid(flag))
     },[])
 
     async function sendFeedback(e) {
