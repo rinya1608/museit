@@ -2,34 +2,13 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
+const MIDI_EDITOR_URL = process.env.MIDI_EDITOR_URL || 'http://localhost:5000'
+
 module.exports = {
-    mode: "development",
+    mode: "production",
     entry: "./src/index",
-    devtool: "source-map",
-    devServer: {
-        port: 3000,
-        hot: "only",
-        historyApiFallback: true,
-        open: true,
-        proxy: {
-            "/api/*":{
-                target:"http://localhost:8080/",
-                secure:"false"
-            }
-        },
-        static: {
-            directory: path.resolve(__dirname, "public"),
-            watch: true,
-        },
-        client: {
-            overlay: {
-                warnings: false,
-                errors: true,
-            },
-        }
-    },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'build'),
         filename: 'index_bundle.js',
         publicPath: '/'
     },
@@ -64,7 +43,7 @@ module.exports = {
             name: "home",
             filename: "remoteEntry.js",
             remotes: {
-                editor: 'editor@http://localhost:5000/remoteEntry.js'
+                editor: 'editor@' + MIDI_EDITOR_URL + '/remoteEntry.js'
             },
             shared: {
                 react: {
