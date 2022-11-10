@@ -8,10 +8,28 @@ import Slider from "../../components/common/slider/Slider";
 import SliderElement from "../../components/common/slider/SliderElement";
 import Footer from "../../components/footer/Footer";
 import FileUploader from "../../components/fileUpload/FileUploader";
+import {Box, Container, Typography} from "@material-ui/core";
+
+const typographyTitleStyle = {
+    color: "#3CEBCB",
+    fontSize: "36px",
+    fontStyle: "normal",
+    fontWeight: 700
+}
+
+const typographyDescStyle = {
+    width: "80%",
+    color: "#171616",
+    fontSize: "24px",
+    fontStyle: "normal",
+    fontWeight: 400,
+    margin: "auto",
+    marginTop: "30px"
+}
 
 const About = () => {
     return (
-        <div className={classes.about}>
+        /*<div className={classes.about}>
             <div className={classes.about_top}>
                 <div className={classes.about_top_text}>
                     MuseIT<br/>Ваш музыкальный<br/>помощник
@@ -77,7 +95,7 @@ const About = () => {
                 </div>
             </div>
 
-            {/*<a name='what'></a>
+            {/!*<a name='what'></a>
             <div className={classes.about_what}>
                 <div className={classes.about_what_form}>
                     <div className={classes.about_what_form_title}><h1>Введите номер телефона или E-mail для регистрации</h1></div>
@@ -98,7 +116,7 @@ const About = () => {
                         <li><img src={calendarIcon}/><span>На месяц - </span></li>
                     </ul>
                 </div>
-            </div>*/}
+            </div>*!/}
             <a name='team'></a>
             <div className={classes.about_team}>
                 <h1>Наша команда</h1>
@@ -129,7 +147,68 @@ const About = () => {
                 <SliderElement/>
             </Slider>
             <Footer/>
-        </div>
+        </div>*/
+        <Box sx={{
+            width: "100%"
+        }}>
+            <Container>
+                <Box sx={{
+                    mt: "100px"
+                }}>
+                    <Typography style={typographyTitleStyle}>
+                        Просто и удобно  создать аранжировку  для вашей мелодии
+                    </Typography>
+                    <Typography style={typographyDescStyle}>
+                        MuseIT - это веб-приложение, которое позволяет автоматически генерировать аккомпанемент к мелодии, а также создавать полноценные аранжировки.
+                    </Typography>
+                </Box>
+                <Box sx={{
+                    mt: "100px"
+                }}>
+                    <Typography style={typographyTitleStyle}>
+                        Как это работает
+                    </Typography>
+                    <Typography style={typographyDescStyle}>
+                        Создавайте аранжировки,  выбирая набор музыкальных инструментов. Просто загрузите мелодию, выберите инструменты и наслаждайтесь результатом.
+
+                    </Typography>
+                </Box>
+            </Container>
+            <Box sx={{
+                backgroundColor: "rgba(218, 218, 218, 0.16)",
+                width: "100%",
+                mt: "50px"
+            }}>
+                <Container style={{
+                    paddingTop: "50px",
+                    paddingBottom: "100px"
+                }}>
+                    <Typography style={typographyTitleStyle}>
+                        Создайте свою мелодию
+                    </Typography>
+                    <FileUploader/>
+                </Container>
+            </Box>
+            <Box sx={{
+                mt: "50px"
+            }}>
+                <Container>
+                    <Typography style={typographyTitleStyle}>
+                        Музыканты по всей России<br/> уже воспользовались нашим продуктом
+                    </Typography>
+                    <Box sx={{
+                        mt: "50px"
+                    }}>
+                        <Slider>
+                            <SliderElement/>
+                            <SliderElement/>
+                            <SliderElement/>
+                            <SliderElement/>
+                        </Slider>
+                    </Box>
+                </Container>
+            </Box>
+        </Box>
     );
 };
 

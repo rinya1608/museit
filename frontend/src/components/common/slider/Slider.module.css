@@ -42,7 +42,7 @@
     clip-path: circle(50%);
     height: 40px;
     width: 40px;
-    background: #2B4CF9;
+    background: rgba(39, 242, 255, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,6 +107,8 @@
 .slider_element_wrap_title, .slider_element_wrap_title_active{
     font-weight: 500;
     text-align: left;
+    color: black;
+
 }
 
 .slider_element_wrap_text{
@@ -123,4 +125,6 @@
 .slider_element_wrap_text, .slider_element_wrap_text_active {
     text-align: left;
     font-weight: 400;
+    color: black;
+
 }

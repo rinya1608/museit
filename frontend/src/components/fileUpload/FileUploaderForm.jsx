@@ -25,7 +25,6 @@ const FileUploaderForm = forwardRef(({
 
     return (
         <form className={classes.fileUploadForm}>
-            <h1 className={classes.fileUploadForm_title}>Создайте свою мелодию</h1>
             {
                 isLoad ?
                     <div className={classes.fileUploadForm_load}><Loader/></div>
@@ -84,7 +83,9 @@ const FileUploaderForm = forwardRef(({
                                             className={classes.fileUploadForm_wrap_right_buttonDownload}>Cкачать
                                     </button>
                                     <Link className={classes.fileUploadForm_wrap_right_buttonDownload} to={"/edit"}>
-                                        Редактировать
+                                        <button className={classes.fileUploadForm_wrap_right_buttonDownload}>
+                                            Редактировать
+                                        </button>
                                     </Link>
                                 </div>
                                 : null

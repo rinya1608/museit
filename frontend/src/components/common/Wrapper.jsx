@@ -1,13 +1,13 @@
 import Header from "../header/Header";
 import React from "react";
+import Footer from "../footer/Footer";
 
 const Wrapper = ({children}) => {
     return (
         <div className="app">
             <Header/>
-            <div className="main">
-                {children}
-            </div>
+            {children}
+            <Footer/>
         </div>
     )
 }

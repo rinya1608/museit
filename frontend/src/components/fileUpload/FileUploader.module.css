@@ -11,7 +11,7 @@
     position: relative;
     display: inline-block;
     outline: none;
-    background: #2B4CF9A6;
+    background: rgba(39, 242, 255, 0.5);
     border: none;
     z-index: 1;
 }
@@ -24,7 +24,7 @@
     top: 0;
     right: 0;
     z-index: -1;
-    background: #2B4CF9A6;
+    background: rgba(39, 242, 255, 0.5);
     border-radius: 8px;
     transition: all 0.3s ease;
 }
@@ -46,7 +46,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 100px;
+    margin-top: 50px;
     width: 100%;
     height: 400px;
 }
@@ -55,6 +55,7 @@
     font-size: 32px;
     font-weight: 700;
     margin-left: 40px;
+    color: black;
 }
 
 .fileUploadForm_load, .fileUploadForm_wrap {
@@ -87,6 +88,7 @@
 .fileUploadForm_wrap_left_fileTitle, .fileUploadForm_wrap_left_toolTitle, .fileUploadForm_wrap_right_fileName {
     font-size: 16px;
     font-weight: 400;
+    color: black;
 }
 
 .fileUploadForm_wrap_left_fileTitle {
@@ -160,6 +162,7 @@
 }
 
 .fileUploadForm_wrap_right_fileName {
+    color: black;
 }
 
 
