@@ -11,7 +11,7 @@ import FileUploader from "../../components/fileUpload/FileUploader";
 import {Box, Container, Typography} from "@material-ui/core";
 
 const typographyTitleStyle = {
-    color: "#3CEBCB",
+    color: "rgb(255 39 119 / 50%)",
     fontSize: "36px",
     fontStyle: "normal",
     fontWeight: 700
@@ -152,7 +152,7 @@ const About = () => {
             width: "100%"
         }}>
             <Container>
-                <Box sx={{
+                <Box id={"aboutProduct"} sx={{
                     mt: "100px"
                 }}>
                     <Typography style={typographyTitleStyle}>
@@ -174,8 +174,8 @@ const About = () => {
                     </Typography>
                 </Box>
             </Container>
-            <Box sx={{
-                backgroundColor: "rgba(218, 218, 218, 0.16)",
+            <Box id={"algoritm"} sx={{
+                background: "linear-gradient(90deg, rgb(245 152 168 / 50%), rgb(246 237 178 /50%))",
                 width: "100%",
                 mt: "50px"
             }}>
@@ -196,7 +196,7 @@ const About = () => {
                     <Typography style={typographyTitleStyle}>
                         Музыканты по всей России<br/> уже воспользовались нашим продуктом
                     </Typography>
-                    <Box sx={{
+                    <Box id={"otzivi"} sx={{
                         mt: "50px"
                     }}>
                         <Slider>

@@ -8,6 +8,16 @@ import logo from "../../img/logo.svg";
 const Footer = () => {
     const [modalActive, setModalActive] = useState(false)
 
+    const [openDialog, setOpenDialog] = React.useState(false);
+
+    const handleClickOpenDialog = () => {
+        setOpenDialog(true);
+    };
+
+    const handleCloseDialog = () => {
+        setOpenDialog(false);
+    };
+
     return (
         /*<div className={classes.footer}>
             <ul className={classes.footer_menu}>
@@ -44,55 +54,16 @@ const Footer = () => {
                             <Link href={"#"} style={{
                                 color: "rgba(23, 22, 22, 0.6)",
                                 marginLeft: "10px"
-                            }}>
+                            }} onClick={handleClickOpenDialog}>
                                 Обратная связь
                             </Link>
                         </ListItem>
                         <ListItem style={{
                             whiteSpace: "nowrap"
                         }}>
-                            <Modal active={modalActive} setActive={setModalActive}>
-                                <FeedbackForm afterSendFunction={() => setModalActive(false)}/>
-                            </Modal>
+                            <FeedbackForm openDialog={openDialog} setOpenDialog={setOpenDialog}/>
                         </ListItem>
                     </List>
-                </Box>
-                <Box sx={{
-                    width: "100%",
-                    height: "70px",
-                    background: "linear-gradient(93.69deg, rgba(238, 39, 255, 0.174) 41.23%, rgba(39, 255, 255, 0.246) 52.58%, rgba(39, 255, 255, 0.12) 65.02%)",
-                    display: "flex",
-                    padding: "auto",
-                    alignItems: "center",
-                    justifyContent: "center"
-                }}>
-                    <Box sx={{
-                        display: "flex",
-                        padding: "auto",
-                        alignItems: "center"
-                    }}>
-                        <Box
-                            component="img"
-                            sx={{
-                                height: 40,
-                                width: 40,
-                            }}
-                            alt="logo"
-                            src={logo}
-                        />
-                        <Typography
-                            style={{
-                                fontFamily: "Montserrat",
-                                fontSize: "35px",
-                                fontWeight: "900",
-                                fontStyle: "Italic",
-                                background: "-webkit-linear-gradient(180deg, rgba(24, 75, 255, 0.6) 19.58%, rgba(134, 39, 255, 0.6) 79.48%)",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                                ml: "10px"
-                            }}
-                        >MuseIT</Typography>
-                    </Box>
                 </Box>
             </Container>
         </Box>

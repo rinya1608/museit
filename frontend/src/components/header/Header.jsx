@@ -50,32 +50,8 @@ const Header = () => {
     }
 
     return (
-        /*<div className={classes.header}>
-            <div className={classes.header_wrap}>
-                <div className={classes.header_logo}>
-                    <a className={classes.header_logo_wrap} href="#">
-                        <img src={logo} alt='logo' className={classes.header_logo_wrap_img}/>
-                        <div className={classes.header_logo_wrap_title}>
-                            MuseIT
-                        </div>
-                    </a>
-                </div>
-                <ul className={classes.header_menu}>
-                    <li><a href='#aboutProduct'>О продукте</a></li>
-                    <li><a href='#instruction'>Инструкция</a></li>
-                    <li><a href='#team'>Наша команда</a></li>
-                    <li><a href='#otziv'>Отзывы</a></li>
-                </ul>
-                {/!*<div className={classes.header_auth}>
-                    <ul>
-                        <li>Вход</li>
-                        <li>Регистрация</li>
-                    </ul>
-                </div>*!/}
-            </div>
-        </div>*/
         <Box sx={{
-            background: "linear-gradient(328deg, rgba(160,241,234,1) 28%, rgba(212,222,237,1) 51%, rgba(234,214,238,1) 81%)",
+            background: "linear-gradient(90deg, #f598a8, #f6edb2)",
             height: "90vh",
             width: "100%",
             position: "relative"
@@ -120,13 +96,13 @@ const Header = () => {
 
                     }}>
                         <ListItem >
-                            <Link href={"#"} style={listItemStyle}>
+                            <Link href={"#aboutProduct"} style={listItemStyle}>
                                 О&nbsp;продукте
                             </Link>
                         </ListItem>
                         <ListItem >
-                            <Link href={"#"} style={listItemStyle}>
-                                Цены
+                            <Link href={"#otzivi"} style={listItemStyle}>
+                                Отзывы
                             </Link>
                         </ListItem>
                         <ListItem >
@@ -190,15 +166,16 @@ const Header = () => {
                     <Box sx={{
                         mt: "50px"
                     }}>
-                        <Button variant="contained" style={{
-                            background: "rgba(39, 242, 255, 0.5)",
+                        <Button href={"#algoritm"} variant="contained" style={{
+                            background: "rgb(255 39 119 / 50%)",
                             boxShadow: "none",
-                            width: "200px",
+                            width: "300px",
                             height: "50px",
                             fontStyle: "normal",
                             fontWeight: 800,
                             color: "white"
-                        }}>Регистрация</Button>
+                        }}>Создай свою мелодию</Button>
+
                     </Box>
                 </Box>
             </Container>
@@ -249,7 +226,7 @@ const Header = () => {
                     marginBottom: "100px"
                 }}>
                     <Button  style={{
-                        background: "rgba(39, 242, 255, 0.5)",
+                        background: "rgb(255 39 119 / 50%)",
                         boxShadow: "none",
                         width: "74%",
                         height: "50px",
@@ -323,7 +300,7 @@ const Header = () => {
                         }}>Согласие на обработку персональных данных</Typography>} />
                     </Box>
                     <Button  style={{
-                        background: "rgba(39, 242, 255, 0.5)",
+                        background: "rgb(255 39 119 / 50%)",
                         boxShadow: "none",
                         width: "74%",
                         height: "50px",
