@@ -21,6 +21,7 @@
 
 .file_upload_select__menu {
     background: #171616 !important;
+    color: white;
 }
 
 .file_upload_select__option--is-focused {

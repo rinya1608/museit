@@ -9,7 +9,7 @@
     position: absolute;
     left: 8px;
     width: 16px;
-    background: #468df3;
+    background: rgba(255, 39, 19, 0.7);
     animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
 }
 .sticks_loader div:nth-child(1) {

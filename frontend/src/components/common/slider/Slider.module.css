@@ -42,7 +42,7 @@
     clip-path: circle(50%);
     height: 40px;
     width: 40px;
-    background: rgb(255 39 119 / 50%);
+    background: rgba(255, 39, 19, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
