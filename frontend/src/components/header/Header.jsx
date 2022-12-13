@@ -105,7 +105,21 @@ const Header = () => {
                                 Отзывы
                             </Link>
                         </ListItem>
-                        <ListItem >
+                        <ListItem>
+                            <Button href={"https://www.donationalerts.com/r/museit"}>
+                                <Typography style={
+                                    {
+                                        fontWeight: "bold",
+                                        textTransform: "none",
+                                        color: "rgba(23, 22, 22, 0.6)",
+                                        fontSize: "20px",
+                                    }
+                                }>
+                                    Спонсировать
+                                </Typography>
+                            </Button>
+                        </ListItem>
+                        {/*<ListItem >
                             <Button onClick={handleClickOpenAuthDialog}>
                                 <Typography style={
                                     {
@@ -132,7 +146,7 @@ const Header = () => {
                                     Регистрация
                                 </Typography>
                             </Button>
-                        </ListItem>
+                        </ListItem>*/}
                     </List>
                 </Box>
                 <Box sx={{
