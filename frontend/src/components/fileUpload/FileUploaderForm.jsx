@@ -17,10 +17,9 @@ const FileUploaderForm = forwardRef(({
                                          downloadFile,
                                          isLoad,
                                          onSelectGeneratorStyleChange,
-                                         generatorStyleValue
+                                         generatorStyleValue,
+                                         user
                                      }, ref) => {
-
-
 
 
     return (
@@ -49,7 +48,8 @@ const FileUploaderForm = forwardRef(({
                                                      className={classes.fileUploadForm_wrap_left_upload_buttonUpload}>Загрузить</button> : ''
                                 }
                             </div>
-                            {fileName ? <h3 className={classes.fileUploadForm_wrap_left_toolTitle}>Выбрать стиль</h3> : null}
+                            {fileName ?
+                                <h3 className={classes.fileUploadForm_wrap_left_toolTitle}>Выбрать стиль</h3> : null}
                             {
                                 fileName ?
                                     <div className={classes.fileUploadForm_wrap_left_tools}>
@@ -62,7 +62,8 @@ const FileUploaderForm = forwardRef(({
                                     </div>
                                     : null
                             }
-                            {fileName ? <h3 className={classes.fileUploadForm_wrap_left_toolTitle}>Выберите инструменты</h3> : null}
+                            {fileName ? <h3 className={classes.fileUploadForm_wrap_left_toolTitle}>Выберите
+                                инструменты</h3> : null}
                             {
                                 fileName ?
                                     <div className={classes.fileUploadForm_wrap_left_tools}>
@@ -72,7 +73,7 @@ const FileUploaderForm = forwardRef(({
                                                 placeholder='Выбрать'
                                         />
                                     </div>
-                                : null
+                                    : null
                             }
                         </div>
                         {
@@ -83,9 +84,12 @@ const FileUploaderForm = forwardRef(({
                                             className={classes.fileUploadForm_wrap_right_buttonDownload}>Cкачать
                                     </button>
                                     <Link className={classes.fileUploadForm_wrap_right_buttonDownload} to={"/edit"}>
-                                        <button className={classes.fileUploadForm_wrap_right_buttonDownload}>
-                                            Редактировать
-                                        </button>
+                                        {user != null ?
+                                            <button className={classes.fileUploadForm_wrap_right_buttonDownload}>
+                                                Редактировать
+                                            </button>
+                                            :
+                                            null}
                                     </Link>
                                 </div>
                                 : null

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import classes from "./Header.module.css";
 import logo from '../../img/logo.svg';
 import {
@@ -14,12 +14,31 @@ import {
     ListItem, TextField,
     Typography
 } from "@material-ui/core";
+import AuthService from "../../api/AuthService";
+import localforage from "localforage";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import {IconButton, Menu, MenuItem} from "@mui/material";
 
 
-
-const Header = () => {
+const Header = ({user, setUser}) => {
 
     const [openAuthDialog, setOpenAuthDialog] = React.useState(false);
+
+    const logout = () => {
+        AuthService.logout()
+        setUser(null)
+    }
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+
 
     const handleClickOpenAuthDialog = () => {
         setOpenAuthDialog(true);
@@ -39,13 +58,39 @@ const Header = () => {
         setOpenRegDialog(false);
     };
 
-    const listItemStyle={
+    const emailRef = useRef()
+    const passwordRef = useRef()
+
+    const regEmailRef = useRef()
+    const regNameRef = useRef()
+    const regPasswordRef = useRef()
+    const regConfirmPasswordRef = useRef()
+
+    const register = () => {
+        AuthService.register(regEmailRef.current.value, regNameRef.current.value, regPasswordRef.current.value, regConfirmPasswordRef.current.value)
+        handleCloseRegDialog()
+    }
+
+    const login = () => {
+        AuthService.login(emailRef.current.value, passwordRef.current.value)
+            .then(u => {
+                localforage.setItem("token", u.data.accessToken)
+                localforage.setItem("refreshToken", u.data.refreshToken)
+                localforage.setItem("user", u.data.user)
+                setUser(u.data.user)
+            })
+        handleCloseAuthDialog()
+        handleClose()
+    }
+
+
+    const listItemStyle = {
         color: "rgba(23, 22, 22, 0.6)",
         fontSize: "20px",
         marginRight: "30px"
     }
 
-    const listItemStyleBold={
+    const listItemStyleBold = {
         fontWeight: "bold"
     }
 
@@ -95,44 +140,74 @@ const Header = () => {
                         marginLeft: "auto"
 
                     }}>
-                        <ListItem >
+                        <ListItem>
                             <Link href={"#aboutProduct"} style={listItemStyle}>
                                 О&nbsp;продукте
                             </Link>
                         </ListItem>
-                        <ListItem >
+                        <ListItem>
                             <Link href={"#otzivi"} style={listItemStyle}>
                                 Отзывы
                             </Link>
                         </ListItem>
-                        <ListItem >
-                            <Button onClick={handleClickOpenAuthDialog}>
-                                <Typography style={
-                                    {
-                                        fontWeight: "bold",
-                                        textTransform: "none",
-                                        color: "rgba(23, 22, 22, 0.6)",
-                                        fontSize: "20px",
-                                    }
-                                }>
-                                    Вход
-                                </Typography>
-                            </Button>
-                        </ListItem>
-                        <ListItem>
-                            <Button onClick={handleClickOpenRegDialog}>
-                                <Typography style={
-                                    {
-                                        fontWeight: "bold",
-                                        textTransform: "none",
-                                        color: "rgba(23, 22, 22, 0.6)",
-                                        fontSize: "20px",
-                                    }
-                                }>
-                                    Регистрация
-                                </Typography>
-                            </Button>
-                        </ListItem>
+                        {
+                            user == null ? <ListItem>
+                                    <ListItem>
+                                        <Button onClick={handleClickOpenAuthDialog}>
+                                            <Typography style={
+                                                {
+                                                    fontWeight: "bold",
+                                                    textTransform: "none",
+                                                    color: "rgba(23, 22, 22, 0.6)",
+                                                    fontSize: "20px",
+                                                }
+                                            }>
+                                                Вход
+                                            </Typography>
+                                        </Button>
+                                    </ListItem>
+                                    <ListItem>
+                                        <Button onClick={handleClickOpenRegDialog}>
+                                            <Typography style={
+                                                {
+                                                    fontWeight: "bold",
+                                                    textTransform: "none",
+                                                    color: "rgba(23, 22, 22, 0.6)",
+                                                    fontSize: "20px",
+                                                }
+                                            }>
+                                                Регистрация
+                                            </Typography>
+                                        </Button>
+                                    </ListItem>
+                                </ListItem>
+                                :
+                                <Box>
+                                    <IconButton
+                                        size="large"
+                                        edge="end"
+                                        aria-label="account of current user"
+                                        aria-haspopup="true"
+                                        aria-controls={open ? 'basic-menu' : undefined}
+                                        onClick={handleClick}
+                                        style={{color: "rgba(23, 22, 22, 0.6)"}}
+                                    >
+                                        <AccountCircleIcon style={{width: "37px", height: "37px"}}/>
+                                    </IconButton>
+                                    <Menu
+                                        id="basic-menu"
+                                        anchorEl={anchorEl}
+                                        open={open}
+                                        onClose={handleClose}
+                                        MenuListProps={{
+                                            'aria-labelledby': 'basic-button',
+                                        }}
+                                    >
+                                        <MenuItem onClick={handleClose}>Инфо</MenuItem>
+                                        <MenuItem onClick={logout}>Выйти</MenuItem>
+                                    </Menu>
+                                </Box>
+                        }
                     </List>
                 </Box>
                 <Box sx={{
@@ -197,6 +272,7 @@ const Header = () => {
                     </DialogContentText>
                     <TextField
                         autoFocus
+                        inputRef={emailRef}
                         margin="dense"
                         id="name"
                         label="Email"
@@ -208,6 +284,7 @@ const Header = () => {
                         }}
                     />
                     <TextField
+                        inputRef={passwordRef}
                         margin="dense"
                         id="password"
                         label="Пароль"
@@ -225,7 +302,7 @@ const Header = () => {
                     justifyContent: "center",
                     marginBottom: "100px"
                 }}>
-                    <Button  style={{
+                    <Button onClick={login} style={{
                         background: "rgb(255 39 119 / 50%)",
                         boxShadow: "none",
                         width: "74%",
@@ -252,8 +329,9 @@ const Header = () => {
                 }}>
                     <TextField
                         autoFocus
+                        inputRef={regEmailRef}
                         margin="dense"
-                        id="name"
+                        id="email"
                         label="Email"
                         type="email"
                         variant="filled"
@@ -263,6 +341,18 @@ const Header = () => {
                         }}
                     />
                     <TextField
+                        inputRef={regNameRef}
+                        margin="dense"
+                        id="name"
+                        label="Имя"
+                        type="text"
+                        variant="filled"
+                        style={{
+                            width: "80%"
+                        }}
+                    />
+                    <TextField
+                        inputRef={regPasswordRef}
                         margin="dense"
                         id="password"
                         label="Пароль"
@@ -273,10 +363,11 @@ const Header = () => {
                         }}
                     />
                     <TextField
+                        inputRef={regConfirmPasswordRef}
                         margin="dense"
-                        id="password"
+                        id="confirmPassword"
                         label="Пароль еще раз"
-                        type="confirmPassword"
+                        type="password"
                         variant="filled"
                         style={{
                             width: "80%"
@@ -297,9 +388,9 @@ const Header = () => {
                             color: "rgba(23, 22, 22, 0.6)"
                         }}/>} label={<Typography style={{
                             fontSize: "12px"
-                        }}>Согласие на обработку персональных данных</Typography>} />
+                        }}>Согласие на обработку персональных данных</Typography>}/>
                     </Box>
-                    <Button  style={{
+                    <Button onClick={register} style={{
                         background: "rgb(255 39 119 / 50%)",
                         boxShadow: "none",
                         width: "74%",

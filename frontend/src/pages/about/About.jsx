@@ -1,14 +1,10 @@
 import React from 'react';
-import classes from "./About.module.css";
-import checkIcon from '../../img/icon/check.svg'
-import oneNumberIcon from '../../img/icon/one_number.svg'
-import twoNumberIcon from '../../img/icon/two_number.svg'
-import threeNumberIcon from '../../img/icon/three_number.svg'
 import Slider from "../../components/common/slider/Slider";
 import SliderElement from "../../components/common/slider/SliderElement";
-import Footer from "../../components/footer/Footer";
 import FileUploader from "../../components/fileUpload/FileUploader";
 import {Box, Container, Typography} from "@material-ui/core";
+import {Button, List, ListItem, ListItemText} from "@mui/material";
+import CheckIcon from '@mui/icons-material/Check';
 
 const typographyTitleStyle = {
     color: "rgba(255, 39, 19, 0.7)",
@@ -27,7 +23,7 @@ const typographyDescStyle = {
     marginTop: "30px"
 }
 
-const About = () => {
+const About = ({user, setUser}) => {
     return (
         <Box sx={{
             width: "100%"
@@ -67,7 +63,72 @@ const About = () => {
                     <Typography style={typographyTitleStyle}>
                         Создайте свою мелодию
                     </Typography>
-                    <FileUploader/>
+                    <FileUploader user={user}/>
+                </Container>
+            </Box>
+            <Box>
+                <Container>
+                    <Typography style={typographyTitleStyle}>
+                        Получить еще больше возможностей
+                    </Typography>
+                    <Box>
+                        <List style={{
+                            display:"flex",
+                            flexDirection: "row",
+                            width: "80%",
+                            marginLeft: "auto",
+                            marginRight: "auto"
+                        }}>
+                            <ListItem >
+                                <Box sx={{
+                                    border: "solid 1px grey",
+                                    height: "500px",
+                                    p: "20px",
+                                    position: "relative",
+                                    flex: "1 1 auto"
+                                }}>
+                                    <Typography>Стандарт</Typography>
+                                    <Typography style={{fontStyle: "bold", fontSize: "20px", fontWeight: 700}}>Бесплатно</Typography>
+                                    <List >
+                                        <ListItem sx={{p: 0, m: 0}}><CheckIcon/> пункт</ListItem>
+                                    </List>
+                                    <Button style={{position: "absolute", bottom: 0}}>Создать аккаунт</Button>
+                                </Box>
+                            </ListItem>
+                            <ListItem >
+                                <Box sx={{
+                                    border: "solid 1px grey",
+                                    height: "500px",
+                                    p: "20px",
+                                    position: "relative",
+                                    flex: "1 1 auto"
+                                }}>
+                                    <Typography>Стандарт</Typography>
+                                    <Typography style={{fontStyle: "bold", fontSize: "20px", fontWeight: 700}}>Бесплатно</Typography>
+                                    <List >
+                                        <ListItem sx={{p: 0, m: 0}}><CheckIcon/> пункт</ListItem>
+                                    </List>
+                                    <Button style={{position: "absolute", bottom: 0}}>Создать аккаунт</Button>
+                                </Box>
+                            </ListItem>
+                            <ListItem >
+                                <Box sx={{
+                                    border: "solid 1px grey",
+                                    height: "500px",
+                                    p: "20px",
+                                    position: "relative",
+                                    flex: "1 1 auto"
+                                }}>
+                                    <Typography>Стандарт</Typography>
+                                    <Typography style={{fontStyle: "bold", fontSize: "20px", fontWeight: 700}}>Бесплатно</Typography>
+                                    <List >
+                                        <ListItem sx={{p: 0, m: 0}}><CheckIcon/> пункт</ListItem>
+                                    </List>
+                                    <Button style={{position: "absolute", bottom: 0}}>Создать аккаунт</Button>
+                                </Box>
+                            </ListItem>
+                        </List>
+                    </Box>
                 </Container>
             </Box>
             <Box sx={{

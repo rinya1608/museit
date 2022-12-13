@@ -1,4 +1,4 @@
-package ru.web.museit.response;
+package ru.web.museit.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

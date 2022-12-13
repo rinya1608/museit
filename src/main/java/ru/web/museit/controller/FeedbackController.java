@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.web.museit.request.FeedbackRequest;
+import ru.web.museit.dto.request.FeedbackRequest;
 import ru.web.museit.service.SendEmail;
 
 @RestController

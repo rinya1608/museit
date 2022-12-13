@@ -2,10 +2,10 @@ import Header from "../header/Header";
 import React from "react";
 import Footer from "../footer/Footer";
 
-const Wrapper = ({children}) => {
+const Wrapper = ({user, setUser, children}) => {
     return (
         <div className="app">
-            <Header/>
+            <Header user={user} setUser={setUser}/>
             {children}
             <Footer/>
         </div>

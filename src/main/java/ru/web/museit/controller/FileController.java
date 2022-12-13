@@ -8,8 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.web.museit.request.FileRequest;
-import ru.web.museit.response.MessageResponse;
+import ru.web.museit.dto.request.FileRequest;
+import ru.web.museit.dto.response.MessageResponse;
 import ru.web.museit.service.FileService;
 
 @RestController

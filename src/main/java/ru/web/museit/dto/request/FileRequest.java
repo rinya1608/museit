@@ -1,4 +1,4 @@
-package ru.web.museit.request;
+package ru.web.museit.dto.request;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

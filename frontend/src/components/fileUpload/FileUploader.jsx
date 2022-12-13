@@ -6,7 +6,7 @@ import FileUploaderForm from "./FileUploaderForm";
 import FileUploaderConstants from "./FileUploaderConstants";
 import localforage from "localforage";
 
-const FileUpload = () => {
+const FileUpload = ({user}) => {
     const [blob, setBlob] = useState(null);
     const [isLoad, setLoad] = useState(false);
     const [isFile, setIsFile] = useState(false);
@@ -82,6 +82,7 @@ const FileUpload = () => {
                               sendFile={sendFile}
                               onSelectGeneratorStyleChange={onSelectGeneratorStyleChange}
                               generatorStyleValue={generatorStyleValue}
+                              user={user}
                               downloadFile={(e) => downloadFile(e, blob, downloadFileName)}/>
         </div>
     );
