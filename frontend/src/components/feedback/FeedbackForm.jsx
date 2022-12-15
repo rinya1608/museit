@@ -15,7 +15,7 @@ import {
     Typography
 } from "@material-ui/core";
 
-const FeedbackForm = ({openDialog, setOpenDialog}) => {
+const FeedbackForm = ({openDialog, closeDialog}) => {
     const name = useRef();
     const contact = useRef();
     const message = useRef();
@@ -44,8 +44,8 @@ const FeedbackForm = ({openDialog, setOpenDialog}) => {
             formData.append('sourceFile', sourceFile)
             formData.append('processedFile', processedFile)
         }
+        closeDialog()
         await FeedbackService.sendFeedback(formData)
-        setOpenDialog(false)
     }
 
     return (
@@ -72,7 +72,7 @@ const FeedbackForm = ({openDialog, setOpenDialog}) => {
                 <button className={classes.feedback_send}>Отправить</button>
             </form>
         </div>*/
-        <Dialog open={openDialog} onClose={() => setOpenDialog(!openDialog)} aria-labelledby="form-dialog-title">
+        <Dialog open={openDialog} onClose={() => closeDialog()} aria-labelledby="form-dialog-title">
             <DialogTitle id="form-dialog-title" style={{
                 color: "rgba(23, 22, 22, 0.6)",
                 textAlign: "center"

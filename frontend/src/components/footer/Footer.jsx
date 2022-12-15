@@ -45,7 +45,7 @@ const Footer = () => {
                         <ListItem style={{
                             whiteSpace: "nowrap"
                         }}>
-                            <Link href={"#"} style={{
+                            <Link href={"https://rosstat.gov.ru/politika-konfidencialnosti"} style={{
                                 color: "rgba(23, 22, 22, 0.6)",
                                 marginLeft: 0
                             }}>
@@ -61,7 +61,7 @@ const Footer = () => {
                         <ListItem style={{
                             whiteSpace: "nowrap"
                         }}>
-                            <FeedbackForm openDialog={openDialog} setOpenDialog={setOpenDialog}/>
+                            <FeedbackForm openDialog={openDialog} closeDialog={handleCloseDialog}/>
                         </ListItem>
                     </List>
                 </Box>

@@ -35,10 +35,12 @@ public class SendEmail {
         mimeMessageHelper.setFrom("museitcorp@gmail.com");
         mimeMessageHelper.setTo("museitcorp@gmail.com");
         mimeMessageHelper.setText(full_text, false);
-        mimeMessageHelper.setSubject(subject);
-        mimeMessageHelper.addAttachment("source_file.mid", source_file);
-        mimeMessageHelper.addAttachment("processed_file.mid", processed_file);
-
+        if (subject != null)
+            mimeMessageHelper.setSubject(subject);
+        if (source_file != null)
+            mimeMessageHelper.addAttachment("source_file.mid", source_file);
+        if (processed_file != null)
+            mimeMessageHelper.addAttachment("processed_file.mid", processed_file);
         javaMailSender.send(mimeMessage);
 
         System.out.println("Mail sended!");

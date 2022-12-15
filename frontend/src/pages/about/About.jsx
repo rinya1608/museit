@@ -70,7 +70,7 @@ const About = () => {
                     <FileUploader/>
                 </Container>
             </Box>
-            <Box sx={{
+            {/*<Box sx={{
                 mt: "50px"
             }}>
                 <Container>
@@ -88,7 +88,7 @@ const About = () => {
                         </Slider>
                     </Box>
                 </Container>
-            </Box>
+            </Box>*/}
         </Box>
     );
 };
