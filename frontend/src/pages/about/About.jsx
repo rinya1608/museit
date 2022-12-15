@@ -70,25 +70,25 @@ const About = () => {
                     <FileUploader/>
                 </Container>
             </Box>
-            {/*<Box sx={{
+            <Box sx={{
                 mt: "50px"
             }}>
                 <Container>
                     <Typography style={typographyTitleStyle}>
-                        Музыканты по всей России<br/> уже воспользовались нашим продуктом
+                        Музыканты оставляют отзывы<br/>о нашем приложении
                     </Typography>
                     <Box id={"otzivi"} sx={{
                         mt: "50px"
                     }}>
                         <Slider>
-                            <SliderElement/>
-                            <SliderElement/>
-                            <SliderElement/>
-                            <SliderElement/>
+                            <SliderElement title={"Неплохо"} text={"В целом аккомпанемент неплох, есть гармонические огрехи, но их можно тут же исправить во встроенном миди-редакторе, что очень удобно."}/>
+                            <SliderElement title={"Общее качество"} text={"Не все песни аранжируются одинаково качественно."}/>
+                            <SliderElement title={"Сервис"} text={"Интересный сервис! Радует простой интерфейс и наличие редактора!"}/>
+                            <SliderElement title={"Еще бы стилей"} text={"Не хватает стилей аранжировки. Хотелось бы делать каверы для фортепиано."}/>
                         </Slider>
                     </Box>
                 </Container>
-            </Box>*/}
+            </Box>
         </Box>
     );
 };

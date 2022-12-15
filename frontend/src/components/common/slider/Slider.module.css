@@ -61,6 +61,7 @@
 .slider_element{
     flex: 0 0 23%;
     height: 250px;
+    width: 200px;
     border: 2px solid #E2EAF2;
     padding: 40px;
     transition: 0.2s;
@@ -69,6 +70,7 @@
 .slider_element_active{
     flex: 0 0 50%;
     height: 500px;
+    width: 532px;
 
 }
 
@@ -94,13 +96,13 @@
 }
 
 .slider_element_wrap_title{
-    font-size: 12px;
+    font-size: 20px;
     margin-top: 10px;
     transition: 0.2s;
 }
 
 .slider_element_wrap_title_active{
-    font-size: 30px;
+    font-size: 40px;
     margin-top: 20px;
 }
 
@@ -112,13 +114,13 @@
 }
 
 .slider_element_wrap_text{
-    font-size: 5px;
+    font-size: 12px;
     margin-top: 10px;
     transition: 0.2s;
 }
 
 .slider_element_wrap_text_active{
-    font-size: 15px;
+    font-size: 22px;
     margin-top: 20px;
 }
 
